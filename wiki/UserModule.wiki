@@ -1,3 +1,5 @@
+Back to the [Main] 
+
 = Open points =
 
   * When deleting a user, the message should be: "This will remove the user "username" permanently. Do you want to continue?"
@@ -18,6 +20,7 @@
  
  
 = Ideas = 
+ 
  
  
  
