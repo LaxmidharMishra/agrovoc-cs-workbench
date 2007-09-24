@@ -1,6 +1,8 @@
+#Wiki pages for management of open issues and functionalities that are still to implement
+
 = Introduction =
 
-This Wiki will help us to keep track of all the open issues and collaboratively edit them.
+This Wiki will help us to keep track of all the open issues and collaboratively edit them. For bugs in the already implemented things, we will continue to use the issue tracker.
 I will put up a WIKI page for each Module:
 
 
@@ -9,6 +11,7 @@ I will put up a WIKI page for each Module:
 
 
 
+ 
  
  
  
