@@ -1,16 +1,19 @@
-#summary One-sentence summary of this page.
+= Open points =
 
-= Introduction =
+  * When deleting a user, the message should be:
+"This will remove the user "username" permanently. Do you want to continue?"
+The confirmation message should be: 
+"The user "username" has been removed from the list of users. 
+  * When adding a new user group or language, don't show pop up messages that the data has been inserted
+  * It should be possible to mark multiple groups or languages at the same time when choosing
 
-Add your content here.
 
 
-= Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= Links =
 
+  * http://docs.google.com/PresentationEditor?id=dfx4t6ms_1grhvnf
+
+ 
  
  
