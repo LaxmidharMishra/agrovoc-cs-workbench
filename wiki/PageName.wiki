@@ -4,7 +4,7 @@
 
 Here we have a platform now where we can put up open issues to work on:
 
-[[User Module]]
+[User Module]
 
 
 = Details =
@@ -14,4 +14,5 @@ Add your content here.  Format your content with:
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
 
+ 
  
