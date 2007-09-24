@@ -1,0 +1,17 @@
+#This WIKI is to collaboratively track open issues in all the modules
+
+= Open Issues =
+
+Here we have a platform now where we can put up open issues to work on:
+
+[[User Module]]
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
+
+ 
