@@ -12,8 +12,9 @@ The confirmation message should be:
 
 = Links =
 
-  * http://docs.google.com/PresentationEditor?id=dfx4t6ms_1grhvnf
+  * User registration workflow: http://docs.google.com/PresentationEditor?id=dfx4t6ms_1grhvnf
 
+ 
  
  
  
