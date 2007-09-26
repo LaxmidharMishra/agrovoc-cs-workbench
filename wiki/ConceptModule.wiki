@@ -2,8 +2,7 @@ Back to the [Main]
 
 = Open points =
 
-  * point1
-
+  * When relating two concepts or terms, if the relationship is symmetric or has a inverse relationship, the backward direction relationship should be added automatically!
 
 = Links =
 
