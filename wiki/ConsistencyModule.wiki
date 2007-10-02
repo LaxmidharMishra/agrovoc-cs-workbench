@@ -1,5 +1,9 @@
 Back to the [Main] 
 
+We need to revise the consistency check labels in the drop down list and also correct certain queries, since they don't give the correct results
+
+||* Consistency check label (for drop down list) *||* Explanation (what should it do) *||* Status *||
+
 = Open points =
 
   * point1
