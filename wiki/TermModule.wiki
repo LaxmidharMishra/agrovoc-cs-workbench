@@ -1,0 +1,8 @@
+#summary Things that are specific to terms and term relationships
+
+= Open things =
+
+  * We added a new attribute for lexicalizations --> r_has_stemmed_form (sub relationship of r_has_term_variant). This is for storing the stemmed version of each term. Needs to be tested if it works in the workbench
+
+= Ideas =
+
