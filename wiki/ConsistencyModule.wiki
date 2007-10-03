@@ -2,7 +2,8 @@ Back to the [Main]
 
 We need to revise the consistency check labels in the drop down list and also correct certain queries, since they don't give the correct results
 
-|| *Consistency check label (for drop down list)* || *Explanation (what should it do)* || * Status* ||
+|| *Consistency check label (for drop down list)* || *Explanation (what should it do)* || *Info to be displayed* || * Status* ||
+|| Concepts (published,validated) with less or more than one main label in one particular language || Each concept should have exactly one main descriptor in any language for which labels exist. All other cases should be listed here. || concept,Date Created, Date last modified,Status || to be implemented ||
 
 = Open points =
 
