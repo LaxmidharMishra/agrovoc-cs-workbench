@@ -8,5 +8,7 @@ Back to the [Main]
   * A term can only have one main label. If a user wants to check another term to be main label in the same language, the system should ask if he really wants to make this term the main label, since there is already a main label for the concept. If he doesn't confirm, the old main label stays.
   * It should be possible to uncheck a term to be a main label
 
+  * We need to implement a check that no particular term code (for example has_AGROVOC_term_code is duplicated
+
 
 = Ideas =
