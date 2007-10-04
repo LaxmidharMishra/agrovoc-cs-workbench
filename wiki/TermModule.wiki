@@ -5,5 +5,8 @@ Back to the [Main]
 = Open things =
 
   * We added a new attribute for lexicalizations --> r_has_stemmed_form (sub relationship of r_has_term_variant). This is for storing the stemmed version of each term. Needs to be tested if it works in the workbench
+  * A term can only have one main label. If a user wants to check another term to be main label in the same language, the system should ask if he really wants to make this term the main label, since there is already a main label for the concept. If he doesn't confirm, the old main label stays.
+  * It should be possible to uncheck a term to be a main label
+
 
 = Ideas =
