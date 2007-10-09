@@ -10,6 +10,7 @@ Back to the [Main]
   * upon request and login of an administrator, the user request should appear on the admin's log in screen, clicking on the user request will open the user module
   * the user module should have the possibility to filter the users by not active and active users and new user requests (this should still be a different status), i.e. we have user status 'active', 'not active' and 'new user request'
   * for new user request, there shall be a box, where the admin can see, what languages and groups the user has applied for (in order to help him assign)
+  * check only for duplicate username, emails can be duplicate, i.e. I can have more user accounts attached to one email
   * see the user registration workflow file below in the Links section for details
 
 
