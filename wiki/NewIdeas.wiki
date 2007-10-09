@@ -1,5 +1,7 @@
 #summary Ideas from comments and feedback.
 
+Back to the [Main] 
+
 = Introduction =
 
 This page shall summarize ideas for improvement or enhancement of the current system.
