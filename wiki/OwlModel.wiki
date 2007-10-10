@@ -26,14 +26,14 @@ with the 'fake' instance:
 http://www.fao.org/aims/aos/agrovoc/i_1234 (used for the relationships and lexicalizations)
 
 Lexicalizations (terms) will then have the follwing URIs:
-http://www.fao.org/aims/aos/agrovoc/c_en_1234
-http://www.fao.org/aims/aos/agrovoc/c_fr_1234
-http://www.fao.org/aims/aos/agrovoc/c_th_1234
+http://www.fao.org/aims/aos/agrovoc/i_en_1234
+http://www.fao.org/aims/aos/agrovoc/i_fr_1234
+http://www.fao.org/aims/aos/agrovoc/i_th_1234
 ......
 
 If there are more terms in one language, the URIs of each subsequent term will be as follows:
-http://www.fao.org/aims/aos/agrovoc/c_en_1234_1 (synonym)
-http://www.fao.org/aims/aos/agrovoc/c_en_1234_2 (synonym)
+http://www.fao.org/aims/aos/agrovoc/i_en_1234_1 (synonym)
+http://www.fao.org/aims/aos/agrovoc/i_en_1234_2 (synonym)
 ...
 
 All *relationships* will use the English term as a basis for the relationship, and the URI will be of the form 
