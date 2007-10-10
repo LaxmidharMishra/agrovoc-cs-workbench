@@ -6,6 +6,7 @@ This Wiki will help us to keep track of all the open issues and collaboratively 
 I will put up a WIKI page for each Module:
 
   *[NewIdeas
+  *[OWLModel
   *[AllModules
   *[ConceptModule
   *[TermModule
