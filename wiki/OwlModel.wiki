@@ -10,7 +10,7 @@ This page is to discuss latest changes in the OWL model and about the URIs
 = OWL Model changes =
 
 We have added a new relationship
-  *hasStemmedForm: subrelationship of datatype relationship hasTermVariant
+  * hasStemmedForm: subrelationship of datatype relationship hasTermVariant
 
 
 = URIs =
