@@ -43,3 +43,14 @@ http://www.fao.org/aims/aos/agrovoc/hasLexicalization
 ...
 
 so it uses the Camel Case of the English term (small letters, beginning of each word capitalized, words attached)
+
+
+*Creation of the URIs for new concepts*
+
+The ideal option would be to have a counter in the DB that assigns a new number every time and gets incremented by 1 
+But there has been problems with duplicate keys 
+--> concurrent access: more users might be assigned the same number
+--> Ton experimented: and then switched to random number
+
+Also what do we do for automatic creation of AGROVOC term code in hasAgrovocTermCode ? 
+Taken from the concept URI? but how to do with descriptors and non descriptors, scientific terms, etc. ? What term code do they get?
