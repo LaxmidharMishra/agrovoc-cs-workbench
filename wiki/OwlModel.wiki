@@ -45,7 +45,7 @@ http://www.fao.org/aims/aos/agrovoc/hasLexicalization
 so it uses the Camel Case of the English term (small letters, beginning of each word capitalized, words attached)
 
 
-*Creation of the URIs for new concepts*
+== Creation of the URIs for new concepts ==
 
 The ideal option would be to have a counter in the DB that assigns a new number every time and gets incremented by 1 
 But there has been problems with duplicate keys 
