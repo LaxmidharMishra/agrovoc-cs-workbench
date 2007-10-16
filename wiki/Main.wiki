@@ -5,16 +5,18 @@
 This Wiki will help us to keep track of all the open issues and collaboratively edit them. For bugs in the already implemented things, we will continue to use the issue tracker.
 I will put up a WIKI page for each Module:
 
-  *[NewIdeas
-  *[OwlModel
-  *[AllModules
-  *[ConceptModule
-  *[TermModule
-  *[SchemeModule
-  *[SearchModule
-  *[ValidationModule
-  *[ConsistencyModule
-  *[UserModule
+  *[NewIdeas]
+  *[OwlModel]
+  *[AllModules]
+  *[ConceptModule]
+  *[TermModule]
+  *[SchemeModule]
+  *[SearchModule]
+  *[ValidationModule]
+  *[ConsistencyModule]
+  *[UserModule]
+  *[ExportModule]
+  *[ImportModule]
 
 
 
