@@ -28,8 +28,8 @@ Basically, for each new term for a concept, a new random number is generated fir
 
 Then two cases are possible:
   * The term is checked as main label
-     the system needs to check first if there is another term already main label in this language and if so, ask the user if he wants to change the main label, which the user can confirm or not
-     if the term is assigned main label, then the value for the uri of this term and for the hasAGROVOCTermCode value is taken from the uri of the corresponding concept
+     * the system needs to check first if there is another term already main label in this language and if so, ask the user if he wants to change the main label, which the user can confirm or not
+     * if the term is assigned main label, then the value for the uri of this term and for the hasAGROVOCTermCode value is taken from the uri of the corresponding concept
   * The term is linked to another term with the hasTranslation relationship
 
 = Links =
