@@ -31,6 +31,16 @@ Then two cases are possible:
      * the system needs to check first if there is another term already main label in this language and if so, ask the user if he wants to change the main label, which the user can confirm or not
      * if the term is assigned main label, then the value for the uri of this term and for the hasAGROVOCTermCode value is taken from the uri of the corresponding concept
   * The term is linked to another term with the hasTranslation relationship
+     * In this case the term should take over the term code from the term it has been linked to (in AGROVOC translations have the same term code). 
+
+So basically, the concept URI stayes always the same.
+
+Main labels derive their uris and values of the hasAGROVOCTermCode property from the URI of the concept
+
+If the status of a term changes 
+  * from main label to not main label --> assign a new random term code, i.e. the term changes its URI and the value of hasAGROVOCTermCode
+  * from not main label to main label --> change the uri to use the number taken from the concept URI and use this also as value of hasAGROVOCTermCode (discard the previous value)
+
 
 = Links =
 
