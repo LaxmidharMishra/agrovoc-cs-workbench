@@ -5,6 +5,21 @@ Back to the [Main]
   * When relating two concepts or terms, if the relationship is symmetric or has a inverse relationship, the backward direction relationship should be added automatically!
   * Implement a check when entering a new relationship, that this relationship does not already exist in the other direction, i.e. if there is c_123 r_affects c_321 and the user wants to create the relationship c_321 r_affects c_123 the system should throw an error message telling the user that this is not possible.
 
+= Creating new concepts: URI and AGROVOC Term Code =
+
+When a new concept is created, the concept needs to be assigned a URI and each term of the concept needs to be assigned an AGROVOC term code automatically (in order to be backward compatible with the thesaurus). 
+
+If a new concept is created, a term is created along with it by default. This term by default is marked as main label initially (the user can change this later on). 
+For this new term/concept entry, a new random number is created. This random number is used to create the URI of the concept and is used as the term code of the new main label in the chosen language. 
+
+Example:
+
+The user creates a new concept and types in the label "beurre" in French (fr). The system created a random number, for example 9187326412. 
+The following things are created:
+(aos stands for http://www.fao.org/aims/aos/agrovoc#)
+  * Concept with the uri aos:c_9187326412
+
+
 = Links =
 
   * link1
