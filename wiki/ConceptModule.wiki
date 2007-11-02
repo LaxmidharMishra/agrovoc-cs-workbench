@@ -40,7 +40,12 @@ Main labels derive their uris and values of the hasAGROVOCTermCode property from
 If the status of a term changes 
   * from main label to not main label --> assign a new random term code, i.e. the term changes its URI and the value of hasAGROVOCTermCode
   * from not main label to main label --> change the uri to use the number taken from the concept URI and use this also as value of hasAGROVOCTermCode (discard the previous value)
+  * from not having any translation to having a translation --> take over the term code from the term it has been linked to. 
+  * taking off a translation relationship
+     * change nothing if the term has other translation links
+     * assign new random term code if there are no other hasTranslation relationships
 
+*Important:* For each new assignment of a term code, the system needs to check for uniqueness, i.e. the system needs to check that this term code exists only once in this language and that if the term code exists in other languages, these terms are linked with hasTranslation
 
 = Links =
 
