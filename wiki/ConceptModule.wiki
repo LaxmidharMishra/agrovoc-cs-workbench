@@ -18,7 +18,19 @@ The user creates a new concept and types in the label "beurre" in French (fr). T
 The following things are created:
 (aos stands for http://www.fao.org/aims/aos/agrovoc#)
   * Concept with the uri aos:c_9187326412
+  * Instance of this concept with uri aos:i_9187326412
+  * Instance of c_noun: with uri aos:i_fr_9187326412
+  * a relationship instance of hasAGROVOCTermCode from this instance with the value 9187326412
 
+The problem now is, what happens with new terms or if main labels change.
+
+Basically, for each new term for a concept, a new random number is generated first and this is used for the URI of this term (instance of c_noun) and for the value of the hasAGROVOCTermCode relationship. 
+
+Then two cases are possible:
+  * The term is checked as main label
+     the system needs to check first if there is another term already main label in this language and if so, ask the user if he wants to change the main label, which the user can confirm or not
+     if the term is assigned main label, then the value for the uri of this term and for the hasAGROVOCTermCode value is taken from the uri of the corresponding concept
+  * The term is linked to another term with the hasTranslation relationship
 
 = Links =
 
