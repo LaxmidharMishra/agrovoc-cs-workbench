@@ -41,10 +41,17 @@ Main labels derive their uris and values of the hasAGROVOCTermCode property from
 If the status of a term changes 
   * from main label to not main label --> assign a new random term code, i.e. the term changes its URI and the value of hasAGROVOCTermCode AND warn the user if no main label exists anymore and ask to add one (if not existing) or choose from available not-main-terms (there must always be only one main label per concept)
   * from not main label to main label --> change the uri to use the number taken from the concept URI and use this also as value of hasAGROVOCTermCode (discard the previous value) Note: if previous main label exists ask the user to confirm to change the previous main label to not being a main label anymore (because in every main language there can only be one main label). In this case the URI and value of hasAGROVOCTermCode of the previous main label must change. It can be assigned the previous number of the term which just became the new main label. 
-  * from not having any translation to having a translation --> take over the term code from the term it has been linked to. 
-  * taking off a translation relationship
-     * change nothing if the term has other translation links
-     * assign new random term code if there are no other hasTranslation relationships
+  * Handling changes in translations
+     * putting a translation link in between two main labels --> nothing needs to change, since the main labels already have the same AGROVOC term code and URI (derived from the concept URI)
+     * putting a translation link between a main label in one language and a non-main label in another language --> nothing changes, since the main label will keep its term code from the concept and the non-main label also must keep, since there shall be another main label in this language that has the AGROVOC code derived from the concept
+     * putting a translation link between two terms of the same language --> output an error message and don't do anything
+     * putting a translation between two non-main label terms
+       * if one didn't have any translation yet and the other had already: --> take over the AGROVOC term code and URI number from the term that already has translations. 
+       * if both didn't have any translation yet --> pick randomly one of the two and assign the term code to the other
+       * if both had already translations before, pick randomly one of the two , take the AGROVOC term code of this term, and use it to reassign the AGROVOC term codes and URIs of all the translations (and recursively the translations of the translations) of the other term. 
+  * deleting a translation relationship
+     * create a new new random number for each term and assign it to the AGROVOC term code and to reassign the URI, if the terms have no other translations, nothing else needs to be done. If the terms have other translations, then reassign all the translations' URIs and AGROVOC term codes with the newly created numbers. 
+*Problem here*: If there is a circular translationship relation path, like i_en_123 hasTranslation i_fr_123 has Translation i_es_123 hasTranslation i_en_123. Now if I delete the translation between i_en_123 and i_fr_123 the new assignment would do something like i_en_234, i_fr_345, i_es_345, but the english and spanish are still linked with the hasTranslation relationship! but now have different term codes. How to solve this?
 
 *Important:* For each new assignment of a term code, the system needs to check for uniqueness, i.e. the system needs to check that this term code exists only once in this language and that if the term code exists in other languages, these terms are linked with hasTranslation
 
