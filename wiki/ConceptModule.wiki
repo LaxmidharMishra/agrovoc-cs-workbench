@@ -39,8 +39,8 @@ So basically, the concept URI stayes always the same.
 Main labels derive their uris and values of the hasAGROVOCTermCode property from the URI of the concept
 
 If the status of a term changes 
-  * from main label to not main label --> assign a new random term code, i.e. the term changes its URI and the value of hasAGROVOCTermCode
-  * from not main label to main label --> change the uri to use the number taken from the concept URI and use this also as value of hasAGROVOCTermCode (discard the previous value)
+  * from main label to not main label --> assign a new random term code, i.e. the term changes its URI and the value of hasAGROVOCTermCode AND warn the user if no main label exists anymore and ask to add one (if not existing) or choose from available not-main-terms (there must always be only one main label per concept)
+  * from not main label to main label --> change the uri to use the number taken from the concept URI and use this also as value of hasAGROVOCTermCode (discard the previous value) Note: if previous main label exists ask the user to confirm to change the previous main label to not being a main label anymore (because in every main language there can only be one main label). In this case the URI and value of hasAGROVOCTermCode of the previous main label must change. It can be assigned the previous number of the term which just became the new main label. 
   * from not having any translation to having a translation --> take over the term code from the term it has been linked to. 
   * taking off a translation relationship
      * change nothing if the term has other translation links
