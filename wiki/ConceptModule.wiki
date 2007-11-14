@@ -21,6 +21,7 @@ The following things are created:
   * Instance of this concept with uri aos:i_9187326412
   * Instance of c_noun: with uri aos:i_fr_9187326412
   * a relationship instance of hasAGROVOCTermCode from this instance with the value 9187326412
+  * The relationships between the concept and the lexicalizion should be instantiated (isLexicalizationOf and hasLexicalization).
 
 The problem now is, what happens with new terms or if main labels change.
 
