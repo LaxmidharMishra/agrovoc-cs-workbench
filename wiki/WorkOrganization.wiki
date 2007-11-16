@@ -28,3 +28,4 @@ Then Margherita or Boris will check on the online version, and if we are ok with
 || Validation Module || Sachit ||
 || Statistics Module || Sachit ||
 || Preferences Module || Thanaphat ||
+|| User Roles Security / Workflow || Everybody in the corresponding modules ||
