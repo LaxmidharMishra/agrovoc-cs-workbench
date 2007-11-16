@@ -1,6 +1,5 @@
 Back to the [Main] 
-
-<font color="red">Assigned to: TON</font>
+=Assigned to: TON=
 
 = Open points =
 
