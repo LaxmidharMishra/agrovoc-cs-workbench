@@ -58,7 +58,7 @@ If the status of a term changes
 
 = Links =
 
-  * link1
+  * http://vivaldi.cpe.ku.ac.th:8085/agrovoc/
 
  
  
