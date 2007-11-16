@@ -1,3 +1,4 @@
+
 Back to the [Main] 
 =Assigned to: TON=
 
@@ -51,7 +52,11 @@ If the status of a term changes
        * if both didn't have any translation yet --> pick randomly one of the two and assign the term code to the other
        * if both had already translations before, pick randomly one of the two , take the AGROVOC term code of this term, and use it to reassign the AGROVOC term codes and URIs of all the translations (and recursively the translations of the translations) of the other term. 
   * deleting a translation relationship
-     * create a new new random number for each term and assign it to the AGROVOC term code and to reassign the URI, if the terms have no other translations, nothing else needs to be done. If the terms have other translations, then reassign all the translations' URIs and AGROVOC term codes with the newly created numbers. 
+     * create a new new random number for one of the two terms and assign it to the AGROVOC term code and to reassign the URI, 
+         * if both terms have no other translation relationship, choose randomly
+         * if one of the terms has other translations, choose the one that doesn't have a another translation 
+         * if both have other translationships, choose randomly one of the terms, but in this case, also reassign recursively all the terms that are connected to this one with hasTranslation. 
+
 *Problem here*: If there is a circular translationship relation path, like i_en_123 hasTranslation i_fr_123 has Translation i_es_123 hasTranslation i_en_123. Now if I delete the translation between i_en_123 and i_fr_123 the new assignment would do something like i_en_234, i_fr_345, i_es_345, but the english and spanish are still linked with the hasTranslation relationship! but now have different term codes. How to solve this?
 
 *Important:* For each new assignment of a term code, the system needs to check for uniqueness, i.e. the system needs to check that this term code exists only once in this language and that if the term code exists in other languages, these terms are linked with hasTranslation
