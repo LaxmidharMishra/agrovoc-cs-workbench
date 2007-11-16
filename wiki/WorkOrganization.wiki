@@ -20,7 +20,7 @@ Then Margherita or Boris will check on the online version, and if we are ok with
 || Schemes Module || Ton ||
 || Search Module || Ton ||
 || Relationships || Ton ||
-|| Export Module || Thanaphat ||
+|| Export Module || Sachit/Thanaphat ||
 || Import Module || ? ||
 || User Module || Thanaphat ||
 || Group Module || Thanaphat ||
@@ -29,3 +29,13 @@ Then Margherita or Boris will check on the online version, and if we are ok with
 || Statistics Module || Sachit ||
 || Preferences Module || Thanaphat ||
 || User Roles Security / Workflow || Everybody in the corresponding modules ||
+
+
+= Reporting = 
+
+Every two weeks (latest!), Sachit or Ton will send a little summary report (via email to Margherita and Boris) of what has been achieved within the last 2 weeks and what issues need to be resolved next. Any problems to solve shall also be reported here.
+
+= Updates of the system = 
+
+The development team at Kasetsart shall at least every two weeks update the online system at http://naist.cpe.ku.ac.th/agrovoc/.
+Minor updates on the development links should be sent as they are done via email to Margherita and Boris in the meantime. 
