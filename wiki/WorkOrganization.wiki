@@ -1,0 +1,30 @@
+#summary To keep track of who is doing what and how we do things.
+
+= Working with the issue tracker =
+
+The owner is the reporter of the issue (this doesn't change)
+
+Once, somebody picks up the issue to work on it, you change the status to "started" and put your name in the cc field (you can do this)
+
+Once you fixed the issue, you change the status to "Fixed".
+
+Then Margherita or Boris will check on the online version, and if we are ok with it, we change the status to verified and the issue is closed.
+
+
+= Responsibilities =
+
+|| *Module* || *Responsible* ||
+|| Main page || Sachit ||
+|| Concept Module || Ton ||
+|| Term Module || Ton ||
+|| Schemes Module || Ton ||
+|| Search Module || Ton ||
+|| Relationships || Ton ||
+|| Export Module || Thanaphat ||
+|| Import Module || ? ||
+|| User Module || Thanaphat ||
+|| Group Module || Thanaphat ||
+|| Consistency Module || Sachit ||
+|| Validation Module || Sachit ||
+|| Statistics Module || Sachit ||
+|| Preferences Module || Thanaphat ||
