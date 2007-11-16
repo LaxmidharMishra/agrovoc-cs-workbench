@@ -1,5 +1,7 @@
 Back to the [Main] 
 
+<font color="red">Assigned to: TON</font>
+
 = Open points =
 
   * When relating two concepts or terms, if the relationship is symmetric or has a inverse relationship, the backward direction relationship should be added automatically!
