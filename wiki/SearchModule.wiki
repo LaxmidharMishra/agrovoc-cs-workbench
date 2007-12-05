@@ -4,7 +4,7 @@ Back to the [Main]
 
 = Open points =
 
-  *
+  * search module: what "include description" will search for?
 
 = Done =
 
