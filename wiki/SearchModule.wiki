@@ -4,14 +4,11 @@ Back to the [Main]
 
 = Open points =
 
-  * point1
+  *
+
+= Ideas =
 
 
-= Links =
 
-  * link1
-
- 
- 
-= Ideas = 
- 
+  * Today, spelling variances are not searchable. I created two spelling variances of fungi, called "funghi" and "funghhi", but i cannot search using spelling variances.
+I would like to know, in case we dicede that we would like also to search using spelling variances, how much time do you think it will be requested to implement that? 
