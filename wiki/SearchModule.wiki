@@ -10,5 +10,4 @@ Back to the [Main]
 
 
 
-  * Today, spelling variances are not searchable. I created two spelling variances of fungi, called "funghi" and "funghhi", but i cannot search using spelling variances.
-I would like to know, in case we dicede that we would like also to search using spelling variances, how much time do you think it will be requested to implement that? 
+  * Today, spelling variances are not searchable. I created two spelling variances of fungi, called "funghi" and "funghhi", but i cannot search using spelling variances. I would like to know, in case we decide that we would like also to search using spelling variances, how much time do you think it will be requested to implement that? 
