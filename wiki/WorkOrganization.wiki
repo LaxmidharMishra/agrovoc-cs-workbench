@@ -28,7 +28,7 @@ Then Margherita or Boris will check on the online version, and if we are ok with
 || Validation Module || Sachit || End of January 2008  ||
 || Statistics Module || Sachit || For Phase 2 ||
 || Preferences Module || Thanaphat || For Phase 2 ||
-|| User Roles Security / Workflow || Everybody in the corresponding modules ||
+|| User Roles Security / Workflow || Everybody in the corresponding modules || End of January 2008  ||
 
 
 = Reporting = 
