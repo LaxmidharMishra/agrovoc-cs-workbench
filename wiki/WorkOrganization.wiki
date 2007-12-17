@@ -13,29 +13,29 @@ Then Margherita or Boris will check on the online version, and if we are ok with
 
 = Responsibilities =
 
-|| *Module* || *Responsible* ||
-|| Main page || Sachit ||
-|| Concept Module || Ton ||
-|| Term Module || Ton ||
-|| Schemes Module || Ton ||
-|| Search Module || Ton ||
-|| Relationships || Ton ||
-|| Export Module || Sachit/Thanaphat ||
-|| Import Module || ? ||
-|| User Module || Thanaphat ||
-|| Group Module || Thanaphat ||
-|| Consistency Module || Sachit ||
-|| Validation Module || Sachit ||
-|| Statistics Module || Sachit ||
-|| Preferences Module || Thanaphat ||
+|| *Module* || *Responsible* || *Deadline* ||
+|| Main page || Sachit || End of January 2008 ||
+|| Concept Module || Ton || End of January 2008 ||
+|| Term Module || Ton || End of January 2008  ||
+|| Schemes Module || Ton || End of January 2008  ||
+|| Search Module || Ton || End of January 2008  ||
+|| Relationships || Ton || End of January 2008  ||
+|| Export Module || Sachit/Thanaphat || End of January 2008  ||
+|| Import Module || ? || For Phase 2 ||
+|| User Module || Thanaphat || End of January 2008  ||
+|| Group Module || Thanaphat || End of January 2008  ||
+|| Consistency Module || Sachit || End of January 2008  ||
+|| Validation Module || Sachit || End of January 2008  ||
+|| Statistics Module || Sachit || For Phase 2 ||
+|| Preferences Module || Thanaphat || For Phase 2 ||
 || User Roles Security / Workflow || Everybody in the corresponding modules ||
 
 
 = Reporting = 
 
-Every two weeks (latest!), Sachit or Ton will send a little summary report (via email to Margherita and Boris) of what has been achieved within the last 2 weeks and what issues need to be resolved next. Any problems to solve shall also be reported here.
+Every two weeks (latest!), Sachit or Ton will send a little summary report (via email to Margherita) of what has been achieved within the last 2 weeks and what issues need to be resolved next. Any problems to solve shall also be reported here.
 
 = Updates of the system = 
 
 The development team at Kasetsart shall at least every two weeks update the online system at http://naist.cpe.ku.ac.th/agrovoc/.
-Minor updates on the development links should be sent as they are done via email to Margherita and Boris in the meantime. 
+Minor updates on the development links should be sent as they are done via email to Margherita in the meantime. 
