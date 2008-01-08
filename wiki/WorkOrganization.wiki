@@ -1,9 +1,9 @@
 #summary To keep track of who is doing what and how we do things.
 
 ======================================
-Production version: http://naist.cpe.ku.ac.th/agrovoc/
-Development version: http://vivaldi.cpe.ku.ac.th:8085/agrovoc/  
-New model development version: http://vivaldi.cpe.ku.ac.th:8085/agrovocnewmodel/ 
+* Production version: http://naist.cpe.ku.ac.th/agrovoc/
+* Development version: http://vivaldi.cpe.ku.ac.th:8085/agrovoc/  
+* New model development version: http://vivaldi.cpe.ku.ac.th:8085/agrovocnewmodel/ 
 ======================================
 
 = Working with the issue tracker =
