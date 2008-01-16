@@ -7,14 +7,15 @@ The performance of the tool has been tested with a sample ontology + the rice on
 
 = Details =
 
-* Sample file:
-** concepts = to be filled
+*Sample file:
+**concepts = to be filled
+
 *Rice ontology:
-** concepts = to be filled
+**concepts = to be filled
 
 = Wais to improve performances =
 
-* more powerful machine?
-* less data in the db?
-* change db?
-* configure better the db?
+*more powerful machine?
+*less data in the db?
+*change db?
+*configure better the db?
