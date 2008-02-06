@@ -19,3 +19,17 @@ The performance of the tool has been tested with a sample ontology + the rice on
 *less data in the db?
 *change db?
 *configure better the db?
+
+= Persistent model =
+
+Andy has done extensive work on creating the full AGROVOC Concept Server OWL model using JENA. He store the model in MySQL using the Jena persistent model and makes queries using SPARQL.
+
+Currently Ton and Sachit have discovered the following problems with the Sesame framework (the one currently used for the WB):
+
+1- when many users use the system sesame creates duplicated entries in the database. This gives problems on the tool and the model needs to be deleted and reloaded with consequence lost of users modifications.
+
+2- with the sesame API it is not possible to manage all elements of an OWL model, such as domain and range of properties.
+
+Apparently the updated version of sesame still do not solve problem n.2
+
+For these reasons Ton and Sachit are now invertigating on PROTEGE API and JENA. 
