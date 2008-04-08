@@ -5,14 +5,14 @@
 Develop a jsp/java page that connect via the protégé api to the repository and export the recent changes (based on date in input as parameters) in XML format Atom 1.0.
 
 Parameters in input can be:
-# "date from" which export news
-# "date to" for exporting news (default = today())
-# db to connect to (maybe the rice module1 or the rice module4, or the example file, etc.)
-# lang: the language of the labels for terms or concept to export
-# owner (export data of a specific owner (default=all) --> if applicable
+ # "date from" which export news
+ # "date to" for exporting news (default = today())
+ # db to connect to (maybe the rice module1 or the rice module4, or the example file, etc.)
+ # lang: the language of the labels for terms or concept to export
+ # owner (export data of a specific owner (default=all) --> if applicable
 
-* See also:  http://www.fao.org/waicent/whats_new/help/help_en.htm
-
-* Example of FAO AIMS Rss info:   http://www.fao.org/nems/rss/rss_nems_results.asp?owner=615&status=10&dateto=31/12/2009&lang=en&sites=1
+See also:
+ * http://www.fao.org/waicent/whats_new/help/help_en.htm
+ * Example of FAO AIMS Rss info:   http://www.fao.org/nems/rss/rss_nems_results.asp?owner=615&status=10&dateto=31/12/2009&lang=en&sites=1
 
 == Other services.... ==
