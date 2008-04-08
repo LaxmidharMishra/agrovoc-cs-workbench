@@ -10,6 +10,9 @@ Parameters in input can be:
  # db to connect to (maybe the rice module1 or the rice module4, or the example file, etc.)
  # lang: the language of the labels for terms or concept to export
  # owner (export data of a specific owner (default=all) --> if applicable
+ # others if needed...
+
+Deadline: mid May.
 
 See also:
  * http://www.fao.org/waicent/whats_new/help/help_en.htm
