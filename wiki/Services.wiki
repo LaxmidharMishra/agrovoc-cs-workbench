@@ -1,3 +1,5 @@
+#summary Services provided by the CS that applications can use
+
 = Possible services built in top of the Concept Server =
 
 == News via RSS ==
