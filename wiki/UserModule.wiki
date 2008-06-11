@@ -1,5 +1,15 @@
 Back to the [Main] 
 
+= WB USERS =
+
+== Approved ==
+
+* todo
+
+== To approve ==
+
+* todo
+
 = Open points =
 
   * When deleting a user, the message should be: "This will remove the user "username" permanently. Do you want to continue?"
