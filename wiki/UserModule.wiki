@@ -4,11 +4,12 @@ Back to the [Main]
 
 == Approved ==
 
-* todo
+* 11/6/2008: version alpha user gully ('olivier_rovellotti@hotmail.com'); notification sent to the user.
+* all others are approved already.
 
 == To approve ==
 
-* todo
+* none;
 
 = Open points =
 
