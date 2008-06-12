@@ -4,6 +4,7 @@ Back to the [Main]
 
 == Approved ==
 
+* 12/6/2008: version alpha user kimmo.koskinen@helsinki.fi; notification sent to the user.
 * 11/6/2008: version alpha user gully ('olivier_rovellotti@hotmail.com'); notification sent to the user.
 * all others are approved already.
 
