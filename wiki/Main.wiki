@@ -24,14 +24,10 @@ I will put up a WIKI page for each Module:
 = Versioning = 
 
 || Release || Description || Deadline ||  Team || 
-|| v. 0.1 Alpha || Laboratory prototype: basic functionalities; acceptable performances for a sample AGROVOC CS file. Released to be used for test purposes only || Dec 2007 || Ton, Trakul/Sachit||
-|| v. 0.1 Beta || Laboratory prototype: basic functionalities; acceptable performances for a small section of the AGROVOC CS; application bug free. Release to be used for test purposes only with a small module of the CS (up to 10MB). || April 2008|| Ton, Sachit, Thanapat||
-|| v. 0.2 Alpha || Improvement of the v. 0.1 Alpha: basic functionalities (export included); revision after tests; acceptable performances for a small section of the AGROVOC CS; revision of the EN terminology interface; application bug free. Release to be used for test purposes only with a small module of the CS (up to 50MB). || July 2008 || Sachit, Imm, Thanapat||
-|| v. 0.2 Beta|| Additional functionalities (Preferences), improvement of the export module, improved performances to manage large files; Release to be used for test purposes only with a large module of the CS (500MB). || October 2008 || Sachit, Imm, ...||
-|| v. 0.3 || Additional functionalities (Statistics). Release to be used for test purposes only with the full AGROVOC CS. || December 2008 || Sachit, Imm, ...||
-|| v. 0.4 || Revision of some modules. Release to be used for test purposes only with the full AGROVOC CS. || Beginning 2009 || .....||
-|| Version 1.0 || Implementation with the Protégé API v4. Revision of the Owl module (authors, languages, etc.). Release to be used for managing the full AGROVOC CS. || March/April 2009 || .....||
-|| Version 1.1 || WB interface in multiple languages (EN, FR, ES); revised design; Release to be used for managing the full AGROVOC CS. || Mid 2009 || .....||
-|| v. 2 || Import module and tree editor incorporated. Language interface in AR, ZH, TH. || End 2009 || Imm, Nakbin, ....||
-|| v. 2.5 || Game module incorporated. || Beginning 2010 || Imm, ....||
-|| v. 3 || Corpus analysis incorporated: data extraction. || Mid 2010 || ....||
+|| v. 0.1 Alpha || Laboratory prototype: basic functionalities; acceptable performances for a sample AGROVOC CS file. Released to be used for test purposes only || Dec 2007 (DONE) || Ton, Trakul/Sachit||
+|| v. 0.2 || Laboratory prototype: basic functionalities (RSS incorporated); acceptable performances for a small section of the AGROVOC CS; application bug free. Release to be used for test purposes only with a small module of the CS (up to 10MB). || June 2008|| Ton, Sachit, Thanapat, Imm||
+|| v. 0.5 || Improvement of the v. 0.2: basic functionalities (including Export, Preferences, Statistics); revision after tests; improved performances to manage large files; revision of the EN terminology interface; application bug free. Release to be used for test purposes only with large modules of the CS (up to 500MB). || March 2009 || Sachit, Imm, Thanapat||
+|| Version 1.0 || Implementation with the Protégé API v4. Revision of the Owl module (authors, languages, etc.). Release to be used for managing the full AGROVOC CS. || November 2009 || .....||
+|| Version ... || WB interface in multiple languages (EN, FR, ES); Import module and tree editor incorporated. Language interface in AR, ZH, TH.; revised design; Release to be used for managing the full AGROVOC CS. || Mid 2009 || .....||
+|| v. .... || Game module incorporated. || Beginning 2010 ||  ....||
+|| v. .... || Corpus analysis incorporated: data extraction. || Mid 2010 || ....||
