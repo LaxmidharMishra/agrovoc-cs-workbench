@@ -30,6 +30,7 @@
 ====Auto completion features supporting the search functionality;====
 ====Improved video-help manuals.====
 ===Implemented language add/edit/delete for display languages.===
+===Add preliminary web services===
 
 ----
 
@@ -55,4 +56,3 @@
 ===Laboratory prototype: basic functionalities; ===
 ===Acceptable performances for a sample AGROVOC CS file. ===
 ===Released to be used for test purposes only===
-
