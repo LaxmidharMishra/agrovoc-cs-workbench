@@ -3,15 +3,24 @@ Discussion about performance of the tool.
 
 = Introduction =
 
-The performance of the tool has been tested with a sample ontology + the rice ontology.
+The performance of the tool has been tested with several modules.
 
-= Details =
+= Details of tests x V0.3=
 
-*Sample file:
-**concepts = to be filled
+||Number of Lang||Size MB||Contains||Module type||
+||1||39||all EN||by language||
+||2||53||all EN TH||by language||
+||3||65||all EN TH FR||by language||
+||4||79||all EN TH FR ES||by language||
+||5||92||all EN TH FR ES AR||by language||
+||6||110||all EN TH FR ES AR ZH||by language||
+||7||130||all EN TH FR ES AR ZH JA||by language||
+||18||95||all lang x substances||by top term||
+||18||46||all lang x organisms||by top term||
+||18||17||all lang x resources||by top term||
 
-*Rice ontology:
-**concepts = to be filled
+
+----
 
 = Wais to improve performances =
 
