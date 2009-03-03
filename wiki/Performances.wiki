@@ -19,6 +19,37 @@ The performance of the tool has been tested with several modules.
 ||18||46||all lang x organisms||by top term||
 ||18||17||all lang x resources||by top term||
 
+Final TT for modularization tests:
+
+4788	EN	methods
+6211	EN	Products
+13586	EN	processes
+49874	EN	properties
+49904	EN	organisms
+50227	EN	groups
+7778	EN	time
+330704	EN	phenomena
+330705	EN	substances
+330829	EN	subjects
+330834	EN	activities
+330892	EN	entities
+330919	EN	objects
+330988	EN	location
+331061	EN	features
+330979	EN	events
+331093	EN	factors
+9001017	EN	resources
+330991	EN	strategies
+330995	EN	stages
+330998	EN	state
+330985	EN	systems
+330493	EN	measure
+7644	EN	Technology
+
+Note for Sachit: use this for conversion routine:
+
+java -Xmx1500M -Xss2548k kawa.repl agrovoc-owl.scm -d 2 -m <termcode> agrovoc_<termcode>_level_2.owl
+
 
 ----
 
