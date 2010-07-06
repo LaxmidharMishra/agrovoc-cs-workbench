@@ -12,52 +12,89 @@ might be assgined as Invalid, Duplicate or Wontfix depending on the nature of
 the issue.
 
 New                  = Issue has not had initial review yet
+
 Accepted             = Problem reproduced / Need acknowledged
+
 Started              = Work on this issue has begun
+
 Fixed                = Developer made requested changes, QA should verify
+
 Verified             = QA has verified that the fix worked
+
 Invalid              = This was not a valid issue report
+
 Duplicate            = This report duplicates an existing issue
+
 WontFix              = We decided to not take action on this issue
 
 3. Assign these attributes for the issue (eg. Type, Priority, Milestone) and
 assign the task to developers.
 
 Milestone-Release0.1Alpha = Lab prototype; Minimum functionality working
+
 Milestone-Release0.2Beta = RSS,6 modules, video help manual, new layout
+
 Milestone-Release0.2.1Beta = show selected ontology, improved search and
 video manuals, manage display languages, IE bugs fix
+
 Milestone-Release0.3 = Revision of some modules, Additional functionalities
 Statistics and preferences
+
 Milestone-Release1.0 = All essential functionality working, WB interface in
 multiple languages (EN, FR, ES)
-Milestone-Release2.0 = New developments, Implementation with the Protégé API
-v4
+
+Milestone-Release2.0 = New developments, Implementation with the Protégé APIv4
+
 Type-Defect          = Report of a software defect
+
 Type-Enhancement     = Request for enhancement
+
 Type-Task            = Work item that doesn't change the code or docs
+
 Type-Patch           = Source code patch for review
+
 Type-Other           = Some other kind of issue
+
 Priority-Critical    = Must resolve in the specified milestone
+
 Priority-High        = Strongly want to resolve in the specified milestone
+
 Priority-Medium      = Normal priority
+
 Priority-Low         = Might slip to later milestone
+
 OpSys-All            = Affects all operating systems
+
 OpSys-Windows        = Affects Windows users
+
 OpSys-Linux          = Affects Linux users
+
 OpSys-OSX            = Affects Mac OS X users
+
 Component-UI         = Issue relates to program UI
+
 Component-Logic      = Issue relates to application logic
+
 Component-Persistence = Issue relates to data storage components
+
 Component-Scripts    = Utility and installation scripts
+
 Component-Docs       = Issue relates to end-user documentation
+
 Security             = Security risk to users
+
 Performance          = Performance issue
+
 Usability            = Affects program usability
+
 Maintainability      = Hinders future changes
+
 AssignedTo-Prashant  = Prashanta Man Shrestha
+
 AssignedTo-Sachit    = Sachit Rajbhandari
+
 AssignedTo-Gudrun    = Gudrun Johannsen
+
 AssignedTo-Armando   = Armando Stellato
 
 3. Developers can see the task assigned and see set the status 'Started'.
