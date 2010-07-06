@@ -105,12 +105,12 @@ AssignedTo-Gudrun    = Gudrun Johannsen
 AssignedTo-Armando   = Armando Stellato
 
 
-== Developers  work on the issue ==
+== 4. Developers  work on the issue ==
 
 Developers can see the task assigned and see set the status 'Started'.
 Once finished, the issue status can be set to 'Fixed'
 
-== Quality assurance over the fixed issues ==
+== 5. Quality assurance over the fixed issues ==
 
 QA can check all the fixed issues, and verifes them with status 'Verified'
 if not fixed changed them to 'New'
