@@ -10,7 +10,7 @@ attachments (snapshots) and status set as 'New'.
 
 == 2. Project manager check the issue ==
 
-2. Project Manager check the bugs and try to replicate it. If the bug is
+Project Manager check the bugs and try to replicate it. If the bug is
 present in the system, he set the status 'Accepted'. Sometimes, the staus
 might be assgined as Invalid, Duplicate or Wontfix depending on the nature of
 the issue.
@@ -31,7 +31,10 @@ Duplicate            = This report duplicates an existing issue
 
 WontFix              = We decided to not take action on this issue
 
-3. Assign these attributes for the issue (eg. Type, Priority, Milestone) and
+
+== 3. Project manager assign issue to developer(s) ==
+
+Assign these attributes for the issue (eg. Type, Priority, Milestone) and
 assign the task to developers.
 
 Milestone-Release0.1Alpha = Lab prototype; Minimum functionality working
@@ -101,10 +104,15 @@ AssignedTo-Gudrun    = Gudrun Johannsen
 
 AssignedTo-Armando   = Armando Stellato
 
-3. Developers can see the task assigned and see set the status 'Started'.
+
+== Developers  work on the issue ==
+
+Developers can see the task assigned and see set the status 'Started'.
 Once finished, the issue status can be set to 'Fixed'
 
-4. QA can check all the fixed issues, and verifes them with status 'Verified'
+== Quality assurance over the fixed issues ==
+
+QA can check all the fixed issues, and verifes them with status 'Verified'
 if not fixed changed them to 'New'
 
 
