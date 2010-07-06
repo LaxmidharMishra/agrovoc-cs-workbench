@@ -10,14 +10,16 @@ attachments (snapshots) and status set as 'New'.
 
 == 2. Project manager check the issue ==
 
-Project Manager check the bugs and try to replicate it. If the bug is
+Project Manager check the bugs and tries to replicate it. If the bug is
 present in the system, he set the status 'Accepted'. Sometimes, the staus
 might be assgined as Invalid, Duplicate or Wontfix depending on the nature of
 the issue.
 
-New                  = Issue has not had initial review yet
 
-Accepted             = Problem reproduced / Need acknowledged
+=== Status of an issue ===
+
+* New                  = Issue has not had initial review yet
+* Accepted             = Problem reproduced / Need acknowledged
 
 Started              = Work on this issue has begun
 
@@ -34,8 +36,9 @@ WontFix              = We decided to not take action on this issue
 
 == 3. Project manager assign issue to developer(s) ==
 
-Assign these attributes for the issue (eg. Type, Priority, Milestone) and
+PM Assign these attributes for the issue (eg. Type, Priority, Milestone) and
 assign the task to developers.
+
 
 Milestone-Release0.1Alpha = Lab prototype; Minimum functionality working
 
@@ -52,6 +55,7 @@ multiple languages (EN, FR, ES)
 
 Milestone-Release2.0 = New developments, Implementation with the Protégé APIv4
 
+
 Type-Defect          = Report of a software defect
 
 Type-Enhancement     = Request for enhancement
@@ -61,6 +65,8 @@ Type-Task            = Work item that doesn't change the code or docs
 Type-Patch           = Source code patch for review
 
 Type-Other           = Some other kind of issue
+
+
 
 Priority-Critical    = Must resolve in the specified milestone
 
@@ -108,12 +114,34 @@ AssignedTo-Armando   = Armando Stellato
 == 4. Developers  work on the issue ==
 
 Developers can see the task assigned and see set the status 'Started'.
-Once finished, the issue status can be set to 'Fixed'
 
-== 5. Quality assurance over the fixed issues ==
+Once finished, the issue status can be set to 'Fixed' and post patch on SVN. 
 
-QA can check all the fixed issues, and verifes them with status 'Verified'
-if not fixed changed them to 'New'
+It is thus important that developers make it clear wherever the fix for the bug will be deployed (or at least they ask someone to do it), before they mark one bug as fixed.
+
+
+== 5. Quality assurance (QA) over the fixed issues ==
+
+Users (or, again, even developers who did not participate in fixing the bug, but evaluated the outcome from a user perspective) may act as QA. 
+
+QA check all the fixed issues, verifies them and marks them as 'Verified'. If QA finds the bug is fixed, marks it as 'Fixed', otherwise as 'New'. 
+
+
+
+== Example scenario ==
+
+# USER1 posts an issue
+
+# Issue is assigned to DEVELOPER1.
+
+# DEVELOPER1 reads the issue, fixes it, replies to the issue, and put a patch as an attachment to the reply (or explain how to solve it or whatever mean is better for the specific case). 
+
+DEVELOPER1 doesn't mark the issue as fixed. She puts DEVELOPER2 in CC.
+
+# DEVELOPER2 acknowledges the receipt of the patch, accepts it, and applies it to current "live code". He tells the fix will be active on release X.Y.Z and marks the issue as "fixed".
+
+# Version X.Y.Z is officially deployed. USER2 opens the WB and checks behavior from her user perspective. She finds it ok. She reopens the issue in google code and marks it as "QA verified".
+
 
 
 Add your content here.
