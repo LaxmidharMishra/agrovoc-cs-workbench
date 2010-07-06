@@ -3,8 +3,12 @@ currently being used.
 
 = Issue tracker workflow =
 
-1. User reports the bug, with the summary , description, if possible
+== 1. User reports the issue ==
+
+User reports the bug, with the summary , description, if possible
 attachments (snapshots) and status set as 'New'.
+
+== 2. Project manager check the issue ==
 
 2. Project Manager check the bugs and try to replicate it. If the bug is
 present in the system, he set the status 'Accepted'. Sometimes, the staus
