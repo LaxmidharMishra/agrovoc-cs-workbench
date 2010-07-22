@@ -1,0 +1,82 @@
+Since the URIs are there, the conversion should be pretty straightforward.
+
+A few things come to mind:
+
+-- The instances of a concept need to be conflated with the 
+   classes of a concept.  Use the link:
+
+    agro:i_49361   rdf:type  agro:c_49361
+   
+   and make agro:i_49361 disappear...
+
+-- The instances of aosc:c_noun become instances of skosxl:Label:
+
+    agro:i_es_1275483848603   rdf:type     aosc:c_noun - changes to
+    agro:i_es_1275483848603   rdf:type     skosxl:Label
+
+-- The instances of owl:Class become instances of skos:Concept
+
+   agro:c_28403   rdf:type   owl:Class    - changes to
+   agro:c_28403   rdf:type   skos:Concept
+
+-- While you are at it, you might want to change the domains in the 
+   AOS vocabulary declarations.  Change:
+
+   aosc:hasSymptom     rdfs:domain   aosc:c_domain_concept
+   aosc:isMainLabel    rdfs:domain   aosc:c_lexicalization
+
+   To:
+
+   aosc:hasSymptom        rdfs:domain   skos:Concept
+   aosc:hasBroaderSynonym rdfs:domain   skosxl:Label
+
+-- Declare refinements to be subproperties of SKOS relation properties:
+
+   aosc:hasBroaderSynonym rdfs:subPropertyOf skosxl:labelRelation
+   aosc:hasSymptom        rdfs:subPropertyOf skos:semanticRelation
+
+Aside from changing Lexicalizations to Labels, Classes to Concepts, the slightly more complicated bits involve
+testing whether isMainLabel is True or False in order to relate a Label with prefLabel or altLabel, and
+resolving "i_12345" to "c_12345".
+
+Maybe start with a small subset of the triples, then test the output already with a SKOS validator.
+
+----------------------
+
+EXAMPLE:
+
+Let's consider the example of agrovoc:i_hi_1275516154853, about which the following is stated:
+
+    agrovoc:i_3483               aosc:hasLexicalization       agrovoc:i_hi_1275516154853
+    agrovoc:i_hi_1275516154853   aosc:isLexicalizationOf      agrovoc:i_3483
+    agrovoc:i_hi_1275516154853   aosc:hasBroaderSynonym       agrovoc:i_hi_1275516153372
+    agrovoc:i_hi_1275516154853   rdfs:label                   X
+    agrovoc:i_hi_1275516154853   aosc:hasCodeAgrovoc          X
+    agrovoc:i_hi_1275516154853   aosc:hasDateCreated          X
+    agrovoc:i_hi_1275516154853   aosc:hasStatus               X
+    agrovoc:i_hi_1275516154853   aosc:isMainLabel             X
+    agrovoc:i_hi_1275516154853   rdf:type                     aosc:c_noun
+    agrovoc:i_hi_1275516153372   aosc:hasNarrowerSynonym      agrovoc:i_hi_1275516154853
+
+The above triples could be translated as:
+
+    agrovoc:i_3483               skosxl:prefLabel             agrovoc:i_hi_1275516154853
+    agrovoc:i_hi_1275516154853   aosc:hasBroaderSynonym       agrovoc:i_hi_1275516153372
+    agrovoc:i_hi_1275516154853   skosxl:literalForm           X
+    agrovoc:i_hi_1275516154853   aosc:hasCodeAgrovoc          X
+    agrovoc:i_hi_1275516154853   aosc:hasDateCreated          X
+    agrovoc:i_hi_1275516154853   aosc:hasStatus               X
+    agrovoc:i_hi_1275516154853   aosc:isMainLabel             X - see note below...
+    agrovoc:i_hi_1275516154853   rdf:type                     skosxl:Label
+    agrovoc:i_hi_1275516153372   aosc:hasNarrowerSynonym      agrovoc:i_hi_1275516154853
+
+Note:
+-- drop agrovoc:i_hi_1275516154853   aosc:isLexicalizationOf      agrovoc:i_3483
+-- if aosc:isMainLabel has the value "true" (as in 444,387 cases)
+   then
+        use "skosxl:prefLabel"
+-- if aosc:isMainLabel has the value "false" (as in 91,419 cases)
+   then
+        use "skosxl:altLabel"
+
+
