@@ -1,0 +1,100 @@
+		
+ALl of these come from ModelConstants.properties		
+		
+		CLASSES
+		
+OK		c_domain_concept        
+OK		c_lexicalization        
+		c_definition            
+		c_image                 
+		c_geographic_concept    
+		c_scientific_term       
+KO		c_noun                  
+		c_category              
+		c_classification_scheme 
+
+		 
+		QUESTION: are all of the following 6 properties all abstract properties?
+				 
+		WBObjectProperty
+		WBDatatypeProperty
+		conceptEditorialDatatypeProperty
+		conceptDomainDatatypeProperty		domain: c_category
+		termEditorialDatatypeProperty
+		termDomainDatatypeProperty 
+		 
+		 
+		DATATYPE        
+		        
+PARTIALLY (only lex for now)		hasStatus   		   	domain: union (c_category, c_lexicalization)	range: enumeration on string            
+PARTIALLY (only lex for now)		hasDateCreated         	domain: union (c_category, c_lexicalization, c_entity_annotation, c_classification_scheme) range: string
+PARTIALLY (only lex for now)		hasDateLastUpdated     	domain: union (c_category, c_lexicalization, c_entity_annotation, c_classification_scheme) range: string
+OK		hasCode                 	domain: c_lexicalization					IS THIS A CONCRETE PROPERTY? that is, has it instances or just its subproperties?
+OK		isMainLabel             
+OK		hasCodeAgrovoc          	domain: c_lexicalization	
+OK		hasCodeFaoPa            	domain: c_lexicalization
+OK		hasCodeAsc              	domain: c_lexicalization
+OK		hasCodeAsfa             	domain: c_lexicalization
+OK		hasCodeTaxonomic        	domain: c_lexicalization
+OK		hasCodeFaoterm          	domain: c_lexicalization
+OK		hasFishery3AlphaCode		domain: c_lexicalization    
+OK		hasSpellingVariant      	domain: c_lexicalization
+OK		hasScopeNote            	domain: c_category			range: string
+OK		hasEditorialNote        	domain: c_category			range: string
+OK		takenFromSource         	domain: c_definition		range: complex datarange: string list
+OK		hasSourceLink           	domain: c_definition		range: string
+OK		hasImageLink            	domain: c_image				range: string
+OK		hasImageSource          	domain: c_image				range: string
+OK		hasNumber               	domain: c_domain_concept	range: string
+OK		hasDate                 	domain: c_domain_concept	range: string  IS THIS A CONCRETE PROPERTY? that is, has it instances or just its subproperties?
+OK		isSpatiallyIncludedInCity 	domain: c_category        	range: string		sub: conceptDomainDatatypeProperty
+OK		isSpatiallyIncludedInState  domain: c_category        	range: string		sub: conceptDomainDatatypeProperty
+
+		
+		OBJECT PROPERTIES
+		
+OK		hasBroaderSynonym			domain: c_lexicalization	range: c_lexicalization
+OK		hasTranslation              domain: c_lexicalization	range: c_lexicalization	  sub: hasRelatedTerm   
+		hasRelatedConcept        	domain: c_domain_concept   	range: c_domain_concept	  IS IT CONCRETE? IN CASE IT CAN BE DELETED FROM THE CONVERSION CODE
+OK		hasRelatedTerm        		domain: c_lexicalization	range: c_lexicalization   IS IT CONCRETE? IN CASE IT CAN BE DELETED FROM THE CONVERSION CODE
+OK		hasLexicalization        	domain: c_category			range: c_lexicalization
+KO		isLexicalizationOf			I preferred to drop it, we can always get it by looking for the reverse triple on hasLexicalization. Anyway, if in doubt, this can be added whenever we want, even on the run       
+		hasDefinition            	domain: c_category        	range: c_definition
+		isDefinitionOf           	inv of the above one				
+		hasCategory            		domain: c_classification_scheme		range: c_category
+		belongsToScheme          	domain: c_category 			range: c_classification_scheme inverse of the above  
+		hasImage                 	domain: c_domain_concept	range: image
+		isImageOf                	inv of the above
+		hasMappedDomainConcept   	domain: c_category			range: c_domain_concept			
+		isSubCategoryOf          	domain: c_category			range: c_category		IS IT BEING USED?
+		hasSubCategory           	domain: c_category			range: c_category		IS IT BEING USED?
+		has         				WHERE IS IT DEFINED?          		   
+		is                       	WHERE IS IT DEFINED?
+		SubCategory              	WHERE IS IT DEFINED?
+		SubCategoryOf            	WHERE IS IT DEFINED? /THINK IT IS SOME KID OF WRONG CUT SINCE IS+THIS PROPERTY IS AN EXISTING PROPERTY
+OK		isAbbreviationOf         	domain: c_lexicalization	range: c_lexicalization   sub. hasRelatedTerm
+OK		hasAcronym               	domain: c_lexicalization	range: c_lexicalization   sub: hasAbbreviation
+OK		hasSynonym               	domain: c_lexicalization	range: c_lexicalization   sub: hasRelatedTerm
+		isReferencedInAnnot      	WHERE IS IT DEFINED?    
+		thesaurusRelationship    	WHERE IS IT DEFINED?    
+		subclassOf               	IS IT THE RDFS ONE?    
+		hasSubclass              	WHERE IS IT DEFINED?
+		isInstanceOf             	WHERE IS IT DEFINED?
+		hasInstance              	WHERE IS IT DEFINED?
+OK		isSpatiallyIncludedIn    	domain: c_domain_concept	range: ?? 		I SUPPOSE IT IS LINKING DOMAIN CONCEPTS
+OK		isPartOf                 	domain: c_domain_concept	range: ??		I SUPPOSE IT IS LINKING DOMAIN CONCEPTS
+OK		isPublishedBy       		domain: c_domain_concept   	range: c_domain_concept nephew of hasRelatedConcept
+		
+		
+OK		hasTermType					domain: c_lexicalization 	range: enumeration over string
+OK		isPartOfSubvocabulary		domain: c_domain_concept 	range: enumeration over string
+OK		hasIssn						domain: c_domain_concept   	range: string             
+OK		hasIssnL                    domain: c_category        	range: string				sub: conceptDomainDatatypeProperty
+OK		isHoldBy                    domain: c_category        	range: string				sub: conceptDomainDatatypeProperty
+OK		hasCallNumber      			domain: c_category          range?						sub: conceptDomainDatatypeProperty
+OK		isOtherLanguageEditionOf    domain: c_domain_concept   	range: c_domain_concept		sub: hasRelatedConcept
+OK		follows                     domain: c_domain_concept   	range: c_domain_concept		sub: temporalRelationship (which is sub of hasRelatedConcept) inv of precedes
+OK		precedes                    domain: c_domain_concept   	range: c_domain_concept		sub: temporalRelationship (which is sub of hasRelatedConcept) inv of follows
+                 
+		
+		
