@@ -4,17 +4,9 @@ import it.uniroma2.art.owlart.exceptions.ModelAccessException;
 import it.uniroma2.art.owlart.exceptions.ModelUpdateException;
 import it.uniroma2.art.owlart.exceptions.UnsupportedRDFFormatException;
 import it.uniroma2.art.owlart.io.RDFFormat;
-import it.uniroma2.art.owlart.model.ARTNode;
-import it.uniroma2.art.owlart.model.ARTResource;
 import it.uniroma2.art.owlart.model.ARTURIResource;
 import it.uniroma2.art.owlart.model.NodeFilters;
-import it.uniroma2.art.owlart.models.OWLModel;
 import it.uniroma2.art.owlart.models.SKOSXLModel;
-import it.uniroma2.art.owlart.navigation.ARTNodeIterator;
-import it.uniroma2.art.owlart.navigation.ARTResourceIterator;
-import it.uniroma2.art.owlart.navigation.ARTStatementIterator;
-import it.uniroma2.art.owlart.vocabulary.OWL;
-import it.uniroma2.art.owlart.vocabulary.SKOS;
 import it.uniroma2.art.owlart.vocabulary.SKOSXL;
 import it.uniroma2.art.owlart.vocabulary.XmlSchema;
 
@@ -85,6 +77,7 @@ public class OWL2SKOSConverter {
 	 * @throws ModelUpdateException
 	 * @throws ModelAccessException
 	 */
+	@SuppressWarnings("unchecked")
 	public void convertInstance(OWLIndividual ind, ARTURIResource skosConcept) throws ModelUpdateException,
 			ModelAccessException {
 
@@ -276,6 +269,7 @@ public class OWL2SKOSConverter {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	void convertDatatypeLanguageProperty(RDFResource owlSubject, ARTURIResource skosSubject,
 			RDFProperty predicate) throws ModelUpdateException {
 		Collection<RDFSLiteral> values = owlSubject.getPropertyValues(predicate);
@@ -285,6 +279,7 @@ public class OWL2SKOSConverter {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	void convertPlainDatatypeStringProperty(RDFResource owlSubject, ARTURIResource skosSubject,
 			RDFProperty predicate) throws ModelUpdateException {
 		Collection<String> values = owlSubject.getPropertyValues(predicate);
@@ -294,6 +289,7 @@ public class OWL2SKOSConverter {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	void convertPlainDatatypeINTProperty(RDFResource owlSubject, ARTURIResource skosSubject,
 			RDFProperty predicate) throws ModelUpdateException {
 		Collection<Integer> values = owlSubject.getPropertyValues(predicate);
@@ -323,6 +319,7 @@ public class OWL2SKOSConverter {
 	 *            or skos concepts (instance) and thus drives the conversion of their URI
 	 * @throws ModelUpdateException
 	 */
+	@SuppressWarnings("unchecked")
 	void convertPlainObjectProperty(RDFResource owlSubject, ARTURIResource skosSubject,
 			RDFProperty owlPredicate, ARTURIResource skosPredicate, ResType resType)
 			throws ModelUpdateException {
@@ -361,6 +358,7 @@ public class OWL2SKOSConverter {
 				.createURIResource(predicate.getURI()), resType);
 	}
 
+	@SuppressWarnings("unchecked")
 	public void exploreConcept(OWLNamedClass cls) throws ModelUpdateException, ModelAccessException {
 		Collection<OWLIndividual> instances = cls.getInstances(false);
 		if (instances.size() != 1)
