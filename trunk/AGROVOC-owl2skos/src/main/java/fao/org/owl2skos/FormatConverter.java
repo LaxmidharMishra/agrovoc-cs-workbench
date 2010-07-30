@@ -1,5 +1,6 @@
 package fao.org.owl2skos;
 
+import fao.org.owl2skos.conversion.OWL2SKOSConverter;
 import it.uniroma2.art.owlart.exceptions.ModelAccessException;
 import it.uniroma2.art.owlart.exceptions.ModelCreationException;
 import it.uniroma2.art.owlart.exceptions.ModelUpdateException;
@@ -12,10 +13,6 @@ import it.uniroma2.art.owlart.models.SKOSXLModel;
 
 import java.io.File;
 import java.io.IOException;
-
-import edu.stanford.smi.protege.model.Project;
-import fao.org.owl2skos.conversion.OWL2SKOSConverter;
-import fao.org.owl2skos.protege.ProtegeModelLoader;
 
 public class FormatConverter {
 
