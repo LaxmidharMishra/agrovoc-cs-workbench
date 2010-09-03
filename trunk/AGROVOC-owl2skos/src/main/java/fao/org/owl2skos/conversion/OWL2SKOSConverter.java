@@ -8,7 +8,6 @@ import it.uniroma2.art.owlart.model.ARTURIResource;
 import it.uniroma2.art.owlart.model.NodeFilters;
 import it.uniroma2.art.owlart.models.SKOSXLModel;
 import it.uniroma2.art.owlart.vocabulary.SKOSXL;
-import it.uniroma2.art.owlart.vocabulary.XmlSchema;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,6 +29,7 @@ public class OWL2SKOSConverter {
 	public static final String agrovocBaseURI = "http://aims.fao.org/aos/agrovoc";
 	public static final String agrovocSchemeURI = agrovocBaseURI + "/"	+ "agrovocScheme";
 	public static final String agrovocDefNamespace = agrovocBaseURI + "/";
+	public static final String agrovocDefNamespacePrefix = "agrovoc";
 
 	public static enum ResType {
 		label, instance
@@ -80,7 +80,8 @@ public class OWL2SKOSConverter {
 	@SuppressWarnings("unchecked")
 	public void convertInstance(OWLIndividual ind, ARTURIResource skosConcept) throws ModelUpdateException,
 			ModelAccessException {
-
+		
+		
 		// **************************************
 		// LEXICALIZATION CONVERSION
 		// *************************************
@@ -202,6 +203,15 @@ public class OWL2SKOSConverter {
 
 		// DATATYPE PROPERTIES
 
+		// hasDateCreated
+		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.hasDateCreated);
+
+		// hasDateLastUpdated
+		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.hasDateLastUpdated);
+
+		// hasStatus
+		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.hasStatus);
+
 		// hasScopeNote
 		convertDatatypeLanguageProperty(ind, skosConcept, Vocabulary.hasScopeNote);
 
@@ -285,7 +295,7 @@ public class OWL2SKOSConverter {
 		Collection<String> values = owlSubject.getPropertyValues(predicate);
 		for (String value : values) {
 			skosXLModel.addTriple(skosSubject, skosXLModel.createURIResource(predicate.getURI()), skosXLModel
-					.createLiteral(value.toString(), XmlSchema.STRING));
+					.createLiteral(value.toString()/*, XmlSchema.STRING*/)); // TODO need to check for now removed XmlSchema.STRING, if we add schema type, when we get language from literal value it gives schema type value
 		}
 	}
 
@@ -295,7 +305,7 @@ public class OWL2SKOSConverter {
 		Collection<Integer> values = owlSubject.getPropertyValues(predicate);
 		for (Integer value : values) {
 			skosXLModel.addTriple(skosSubject, skosXLModel.createURIResource(predicate.getURI()), skosXLModel
-					.createLiteral(value.toString(), XmlSchema.INT));
+					.createLiteral(value.toString()/*, XmlSchema.INT*/)); // TODO need to check for now removed XmlSchema.INT, if we add schema type, when we get language from literal value it gives schema type value
 		}
 	}
 
