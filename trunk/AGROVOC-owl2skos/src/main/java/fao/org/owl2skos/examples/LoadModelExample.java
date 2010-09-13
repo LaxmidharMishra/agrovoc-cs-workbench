@@ -110,7 +110,7 @@ public class LoadModelExample {
 
 		System.out.println("default scheme: " + skosXLModel.getDefaultSchema());
 
-		ARTURIResourceIterator it = skosXLModel.listTopConceptsInScheme(skosXLModel.getDefaultSchema());
+		ARTURIResourceIterator it = skosXLModel.listTopConceptsInScheme(skosXLModel.getDefaultSchema(), true);
 		System.out.println("top concepts:");
 		while (it.streamOpen()) {
 			System.out.println(it.getNext());
