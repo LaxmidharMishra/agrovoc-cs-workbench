@@ -150,10 +150,12 @@ public class TaxonomyPrettyPrint {
 	public ArrayList<ARTURIResource> getBroaderConcept(SKOSXLModel skosXLModel, ARTURIResource skosConcept)
 			throws ModelAccessException {
 		ArrayList<ARTURIResource> broaderConcepts = new ArrayList<ARTURIResource>();
-		ARTURIResourceIterator itr = skosXLModel.listNarrowerConcepts(skosConcept, false);
+		// now we have two booleans: transitive is set to false as before, to get only direct relationships,
+		// while inference is true, so that both broader and inverse narrower relationships are considered
+		ARTURIResourceIterator itr = skosXLModel.listNarrowerConcepts(skosConcept, false, true);
 		while (itr.hasNext()) {
 			ARTURIResource broaderConcept = itr.next();
-			if (skosXLModel.isTopConcept(skosConcept, skosXLModel.getDefaultSchema()))
+			if (skosXLModel.isInScheme(skosConcept, skosXLModel.getDefaultSchema()))
 				broaderConcepts.add(broaderConcept);
 
 		}
@@ -163,15 +165,13 @@ public class TaxonomyPrettyPrint {
 	public ArrayList<ARTURIResource> getNarrowerConcept(SKOSXLModel skosXLModel, ARTURIResource skosConcept)
 			throws ModelAccessException {
 		ArrayList<ARTURIResource> narrowerConcepts = new ArrayList<ARTURIResource>();
-		ARTURIResourceIterator itr = skosXLModel.listNarrowerConcepts(skosConcept, false);
+		// now we have two booleans: transitive is set to false as before, to get only direct relationships,
+		// while inference is true, so that both narrower and inverse broader relationships are considered
+		ARTURIResourceIterator itr = skosXLModel.listNarrowerConcepts(skosConcept, false, true);
 		while (itr.hasNext()) {
 			ARTURIResource narrowerConcept = itr.next();
-
-			// STARRED: i changed this to isInScheme, instead of TopConcept, because narrower concepts cannot
-			// be topconcept
 			if (skosXLModel.isInScheme(skosConcept, skosXLModel.getDefaultSchema()))
 				narrowerConcepts.add(narrowerConcept);
-
 		}
 		return narrowerConcepts;
 	}
