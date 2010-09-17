@@ -4,7 +4,7 @@
 	<groupId>org.fao.agrovoc</groupId>
 	<artifactId>agrovoc-owl2skos</artifactId>
 	<name>OWL 2 SKOS Converter</name>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<description>Software for converting from previous OWL based AGROVOC 2005 model into SKOS-XL representation</description>
 	<developers>
 		<developer>

@@ -8,6 +8,7 @@ import it.uniroma2.art.owlart.model.ARTURIResource;
 import it.uniroma2.art.owlart.model.NodeFilters;
 import it.uniroma2.art.owlart.models.SKOSXLModel;
 import it.uniroma2.art.owlart.vocabulary.SKOSXL;
+import it.uniroma2.art.owlart.vocabulary.XmlSchema;
 
 import java.io.File;
 import java.io.IOException;
@@ -62,6 +63,11 @@ public class OWL2SKOSConverter {
 		// scheme
 		Collection<OWLNamedClass> rootConcepts = convertRootConcepts();
 
+		
+		// **************************************
+		// CONCEPTS CONVERSION
+		// *************************************
+		
 		// recursive descent along the tree, converting all concepts
 		for (OWLNamedClass cls : rootConcepts) {
 			exploreConcept(cls);
@@ -295,7 +301,7 @@ public class OWL2SKOSConverter {
 		Collection<String> values = owlSubject.getPropertyValues(predicate);
 		for (String value : values) {
 			skosXLModel.addTriple(skosSubject, skosXLModel.createURIResource(predicate.getURI()), skosXLModel
-					.createLiteral(value.toString()/*, XmlSchema.STRING*/)); // TODO need to check for now removed XmlSchema.STRING, if we add schema type, when we get language from literal value it gives schema type value
+					.createLiteral(value.toString(), XmlSchema.Res.STRING));
 		}
 	}
 
@@ -305,7 +311,7 @@ public class OWL2SKOSConverter {
 		Collection<Integer> values = owlSubject.getPropertyValues(predicate);
 		for (Integer value : values) {
 			skosXLModel.addTriple(skosSubject, skosXLModel.createURIResource(predicate.getURI()), skosXLModel
-					.createLiteral(value.toString()/*, XmlSchema.INT*/)); // TODO need to check for now removed XmlSchema.INT, if we add schema type, when we get language from literal value it gives schema type value
+					.createLiteral(value.toString(), XmlSchema.Res.INT));
 		}
 	}
 
