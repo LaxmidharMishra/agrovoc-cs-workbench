@@ -1,0 +1,569 @@
+WBObjectProperty                        domain:                                                                       range:                                                                       
+hasSubCategory                          domain: aosc:c_category	                                                      range: aosc:c_category	                                                      
+isSubCategoryOf                         domain: aosc:c_category	                                                      range: aosc:c_category	                                                      
+belongsToScheme                         domain: aosc:c_category	                                                      range: aosc:c_classification_scheme	                                         
+hasDefinition                           domain: aosc:c_category	                                                      range: aosc:c_definition	                                                    
+hasMappedDomainConcept                  domain: aosc:c_category	                                                      range: aosc:c_domain_concept	                                                
+hasLexicalization                       domain: aosc:c_category	                                                      range: aosc:c_lexicalization
+hasCategory                             domain: aosc:c_classification_scheme	                                        range: aosc:c_category	                                                      
+isDefinitionOf                          domain: aosc:c_definition	                                                    range: aosc:c_category	                                                      
+belongsToCategory                       domain: aosc:c_domain_concept	                                                range: aosc:c_category	                                                      
+actsUpon                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+affects                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+afflicts                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+benefitsFrom                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+bibliographicRelationship               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+causativeRelationship                   domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+causes                                  domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+compose                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+controls                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+developsFrom                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+developsInto                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+essiveRelationship                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+follows                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+formerlyIncludedIn                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+formerlyIncludes                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+greaterThan                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+growsln                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasAntonym                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasBiologicalControlAgent               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasBreedingMethod                       domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasClass                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasComponent                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasComposition                          domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasControlMethod                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasCropingSystem                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasCultivationProcess                   domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasDisease                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasDisorder                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasFamily                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasGenus                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasGoalOrProcess                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasGreatGroup                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasHost                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasInfectionPart                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasMember                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasNaturalEnemy                         domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasObjectOfActivity                     domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasOrder                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasParent                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPart                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPathogen                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPest                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPhysiologicalFunction                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPortion                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPostProductionPractice               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPractice                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasProduct                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPropagationMaterial                  domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPropagationProcess                   domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasProperty                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasRelatedConcept                       domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasRelatedType                          domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasScopenoteRelatedToConcept            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasSpecies                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasSubOrder                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasSubstitute                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasSymptom                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasTaxonomicLevel                       domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasTheme                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasType                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasVariety                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasWeed                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includes                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesFamily                          domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesGenus                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesGreatGroup                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesOrder                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesSpecies                         domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesSubGroup                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesSubprocess                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesSubspecies                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+indicates                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+influences                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+instrumentalRelationship                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isAGrowthEnvironmentFor                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isAchievedByMeansOf                     domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isActedUponBy                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isAffectedBy                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isAfflictedBy                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isBeneficialFor                         domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isBiologicalControlAgentOf              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isBreedingMethodOf                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isCausedBy                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isComponentOf                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isComposedOf                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isCompositionOf                         domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isControlMethodOf                       domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isControlledBy                          domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isCropingSystemOf                       domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isCultivationProcessOf                  domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isDerivedFrom                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isDiseaseFor                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isDisorderOf                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isHostFor                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isIncludedIn                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isInfectedPartOf                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isInfluencedBy                          domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isInputFor                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isMadeFrom                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isMeansFor                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isMeasuredBy                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isMemberOf                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isNaturalEnemyOf                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isObjectOfActivity                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isOtherLanguageEditionOf                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isOutputFrom                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isParentOf                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPartOf                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPathogenOf                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPerformedBy                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPerformedByMeansOf                    domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPhysiologicalFunctionOf               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPortionOf                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPostProductionPracticeFor             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPracticeFor                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPreventedBy                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isProcessFor                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isProducedBy                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPropagationMaterialOf                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPropagationProcessOf                  domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPropertyOf                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPublishedBy                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isReferencedInConceptScopenote          domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isRelatedTypeOf                         domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isSourceOf                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isSpatiallyIncludedIn                   domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isStudiedBy                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isSubprocessOf                          domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isSubstituteFor                         domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isTaxonomicLevelOf                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isThemeOf                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isUseOf                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isUsedAs                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isUsedIn                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isUsedToMake                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isWeedOf                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+makeUseOf                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+measures                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+partitiveRelationship                   domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+performs                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+pestOf                                  domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+precedes                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+prevents                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+produces                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+productOf                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+publishes                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+quantitativeRelationship                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+smallerThan                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+spatialRelationships                    domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+spatiallyIncludes                       domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+study                                   domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+surroundedBy                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+surrounds                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+taxonomicRelationship                   domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+temporalRelationship                    domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+typeOf                                  domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+usesProcess                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+usingValue                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+valueUsedIn                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasImage                                domain: aosc:c_domain_concept	                                                range: aosc:c_image	                                                         
+isImageOf                               domain: aosc:c_image	                                                        range: aosc:c_domain_concept	                                                
+isLexicalizationOf                      domain: aosc:c_lexicalization	                                                range: aosc:c_category	                                                      
+correspondsTo                           domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasAbbreviation                         domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasAcronym                              domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasBroaderSynonym                       domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasChemicalFormula                      domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasDialectalVariant                     domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasLocalName                            domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasNarrowerSynonym                      domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasNearSynonym                          domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasOldName                              domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasRelatedTerm                          domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasScientificName                       domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasScopenoteRelatedToTerm               domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasSymbol                               domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasSynonym                              domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasTradeName                            domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasTranslation                          domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasTransliteration                      domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isAbbreviationOf                        domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isAcronymOf                             domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isChemicalFormulaOf                     domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isDialectalVariantOf                    domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isLocalNameOf                           domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isOldNameOf                             domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isSymbolFor                             domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isTermReferencedInScopenote             domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isTradeNameOf                           domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isTransliterationOf                     domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+sameAs                                  domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+scientificNameOf                        domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+
+
+
+
+INVERSEOF TABLE:
+
+pairs of INVERSE properties from the aos common vocabulary. I'll use them to only assert only triples modeled
+after those properties on the left (the triples for those on the right are redundant and will be computed
+through reasoning)
+Notes:
+NO REDUNDANCY: 1) no inverseOf themselves (cause of Symmetry) 2) one direction only
+ 																																 (i.e. only X invOf Y and not Y invOf X)
+PREFERENCE: properties starting with "has" have been put on the left (only those triples will be converted)
+						I manually flipped some of them whenever I preferred the right one to be on the left
+
+aosc:hasScopenoteRelatedToConcept       |                  aosc:isReferencedInConceptScopenote                                   
+aosc:hasTradeName                       |                  aosc:isTradeNameOf                                                    
+aosc:hasScopenoteRelatedToTerm          |                  aosc:isTermReferencedInScopenote                                      
+aosc:affects                            |                  aosc:isAffectedBy                                                     
+aosc:actsUpon                           |                  aosc:isActedUponBy                                                    
+aosc:hasImage                           |                  aosc:isImageOf                                                        
+aosc:spatiallyIncludes                  |                  aosc:isSpatiallyIncludedIn                                            
+aosc:hasScientificName                  |                  aosc:scientificNameOf                                                 
+aosc:hasPhysiologicalFunction           |                  aosc:isPhysiologicalFunctionOf                                        
+aosc:afflicts                           |                  aosc:isAfflictedBy                                                    
+aosc:hasHost                            |                  aosc:isHostFor                                                        
+aosc:hasSymptom                         |                  aosc:indicates                                                        
+aosc:hasBiologicalControlAgent          |                  aosc:isBiologicalControlAgentOf                                       
+aosc:performs                           |                  aosc:isPerformedBy                                                    
+aosc:hasSubOrder                        |                  aosc:includesGreatGroup                                               
+aosc:formerlyIncludes                   |                  aosc:formerlyIncludedIn                                               
+aosc:isUsedAs                           |                  aosc:isUseOf                                                          
+aosc:hasPropagationMaterial             |                  aosc:isPropagationMaterialOf                                          
+aosc:isOutputFrom                       |                  aosc:isInputFor                                                       
+aosc:isDerivedFrom                      |                  aosc:isSourceOf                                                       
+aosc:hasRelatedType                     |                  aosc:isRelatedTypeOf                                                  
+aosc:hasGoalOrProcess                   |                  aosc:isAchievedByMeansOf                                              
+aosc:hasCategory                        |                  aosc:belongsToScheme                                                  
+aosc:prevents                           |                  aosc:isPreventedBy                                                    
+aosc:hasSymbol                          |                  aosc:isSymbolFor                                                      
+aosc:study                              |                  aosc:isStudiedBy                                                      
+aosc:smallerThan                        |                  aosc:greaterThan                                                      
+aosc:hasBroaderSynonym                  |                  aosc:hasNarrowerSynonym                                               
+aosc:hasCropingSystem                   |                  aosc:isCropingSystemOf                                                
+aosc:hasProduct                         |                  aosc:productOf                                                        
+aosc:hasTheme                           |                  aosc:isThemeOf                                                        
+aosc:measures                           |                  aosc:isMeasuredBy                                                     
+aosc:hasType                            |                  aosc:typeOf                                                           
+aosc:hasPart                            |                  aosc:isPartOf                                                         
+aosc:sameAs                             |                  aosc:correspondsTo                                                    
+aosc:usingValue                         |                  aosc:valueUsedIn                                                      
+aosc:hasFamily                          |                  aosc:includesGenus                                                    
+aosc:hasDefinition                      |                  aosc:isDefinitionOf                                                   
+aosc:hasPostProductionPractice          |                  aosc:isPostProductionPracticeFor                                      
+aosc:hasCultivationProcess              |                  aosc:isCultivationProcessOf                                           
+aosc:causes                             |                  aosc:isCausedBy                                                       
+aosc:hasOrder                           |                  aosc:includesFamily                                                   
+aosc:hasPathogen                        |                  aosc:isPathogenOf                                                     
+aosc:hasAbbreviation                    |                  aosc:isAbbreviationOf                                                 
+aosc:hasPortion                         |                  aosc:isPortionOf                                                      
+aosc:hasParent                          |                  aosc:isParentOf                                                       
+aosc:hasClass                           |                  aosc:includesOrder                                                    
+aosc:hasLocalName                       |                  aosc:isLocalNameOf                                                    
+aosc:hasSubstitute                      |                  aosc:isSubstituteFor                                                  
+aosc:growsln                            |                  aosc:isAGrowthEnvironmentFor                                          
+aosc:hasGreatGroup                      |                  aosc:includesSubGroup                                                 
+aosc:produces                           |                  aosc:isProducedBy                                                     
+aosc:hasGenus                           |                  aosc:includesSpecies                                                  
+aosc:controls                           |                  aosc:isControlledBy                                                   
+aosc:hasMappedDomainConcept             |                  aosc:belongsToCategory                                                
+aosc:hasWeed                            |                  aosc:isWeedOf                                                         
+aosc:hasSpecies                         |                  aosc:includesSubspecies                                               
+aosc:usesProcess                        |                  aosc:isProcessFor                                                     
+aosc:makeUseOf                          |                  aosc:isUsedIn                                                         
+aosc:includesSubprocess                 |                  aosc:isSubprocessOf                                                   
+aosc:surroundedBy                       |                  aosc:surrounds                                                        
+aosc:isMadeFrom                         |                  aosc:isUsedToMake                                                     
+aosc:hasChemicalFormula                 |                  aosc:isChemicalFormulaOf                                              
+aosc:publishes                          |                  aosc:isPublishedBy                                                    
+aosc:isComposedOf                       |                  aosc:compose
+aosc:hasObjectOfActivity                |                  aosc:isObjectOfActivity                                               
+aosc:benefitsFrom                       |                  aosc:isBeneficialFor                                                  
+aosc:hasAcronym                         |                  aosc:isAcronymOf                                                      
+aosc:hasNaturalEnemy                    |                  aosc:isNaturalEnemyOf                                                 
+aosc:hasPest                            |                  aosc:pestOf                                                           
+aosc:hasInfectionPart                   |                  aosc:isInfectedPartOf                                                 
+aosc:hasMember                          |                  aosc:isMemberOf                                                       
+aosc:hasDialectalVariant                |                  aosc:isDialectalVariantOf                                             
+aosc:hasTaxonomicLevel                  |                  aosc:isTaxonomicLevelOf                                               
+aosc:hasDisorder                        |                  aosc:isDisorderOf                                                     
+aosc:hasTransliteration                 |                  aosc:isTransliterationOf                                              
+aosc:includes                           |                  aosc:isIncludedIn                                                     
+aosc:isMeansFor                         |                  aosc:isPerformedByMeansOf                                             
+aosc:hasPropagationProcess              |                  aosc:isPropagationProcessOf                                           
+aosc:influences                         |                  aosc:isInfluencedBy                                                   
+aosc:hasOldName                         |                  aosc:isOldNameOf                                                      
+aosc:hasProperty                        |                  aosc:isPropertyOf                                                     
+aosc:hasDisease                         |                  aosc:isDiseaseFor                                                     
+aosc:hasControlMethod                   |                  aosc:isControlMethodOf                                                
+aosc:hasPractice                        |                  aosc:isPracticeFor                                                    
+aosc:hasBreedingMethod                  |                  aosc:isBreedingMethodOf                                               
+aosc:hasComposition                     |                  aosc:isCompositionOf                                                  
+aosc:hasComponent                       |                  aosc:isComponentOf                                                    
+aosc:developsInto                       |                  aosc:developsFrom                                                     
+aosc:follows                            |                  aosc:precedes                                                         
+aosc:hasSubCategory                     |                  aosc:isSubCategoryOf                                                  
+aosc:hasLexicalization                  |                  aosc:isLexicalizationOf    
+
+
+
+
+
+
+
+*******************************************
+							CONVERSION:
+*******************************************
+
+************************************
+		REMOVED FOR VARIOUS REASONS
+************************************
+
+DROPPED PROPERTIES
+WBObjectProperty                        domain:                                                                       range:     
+
+INVERSE PROPERTIES REMOVED MANUALLY:
+isDefinitionOf                          domain: aosc:c_definition	                                                    range: aosc:c_category	 
+isImageOf                               domain: aosc:c_image	                                                        range: aosc:c_domain_concept	                                                      
+                                                                                       
+
+  
+************************************
+CONVERTED
+************************************  
+  
+
+GENERIC OBJECT PROPERTIES BETWEEN C_DOMAIN_CONCEPTS
+											[includes both domain AND range as EITHER c_domain_concept OR the redundant c_category]
+FROM THESE, I have to remove inside the program all the properties on the right side of the INVERSEOF TABLE
+																																									(see INVERSEOF TABLE above)
+
+hasMappedDomainConcept                  domain: aosc:c_category	                                                      range: aosc:c_domain_concept	                                                    
+belongsToCategory                       domain: aosc:c_domain_concept	                                                range: aosc:c_category	                                                      
+isParentOf                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasParent                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasType                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+typeOf                                  domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	   
+actsUpon                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+affects                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+afflicts                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+benefitsFrom                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+bibliographicRelationship               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+causativeRelationship                   domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+causes                                  domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+compose                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+controls                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+developsFrom                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+developsInto                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+essiveRelationship                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+follows                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+formerlyIncludedIn                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+formerlyIncludes                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+greaterThan                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+growsln                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasAntonym                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasBiologicalControlAgent               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasBreedingMethod                       domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasClass                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasComponent                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasComposition                          domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasControlMethod                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasCropingSystem                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasCultivationProcess                   domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasDisease                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasDisorder                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasFamily                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasGenus                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasGoalOrProcess                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasGreatGroup                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasHost                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasInfectionPart                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasMember                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasNaturalEnemy                         domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasObjectOfActivity                     domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasOrder                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPart                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPathogen                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPest                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPhysiologicalFunction                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPortion                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPostProductionPractice               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPractice                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasProduct                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPropagationMaterial                  domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasPropagationProcess                   domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasProperty                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasRelatedType                          domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasScopenoteRelatedToConcept            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasSpecies                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasSubOrder                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasSubstitute                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasSymptom                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasTaxonomicLevel                       domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasTheme                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasVariety                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+hasWeed                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includes                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesFamily                          domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesGenus                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesGreatGroup                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesOrder                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesSpecies                         domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesSubGroup                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesSubprocess                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+includesSubspecies                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+indicates                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+influences                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+instrumentalRelationship                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isAGrowthEnvironmentFor                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isAchievedByMeansOf                     domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isActedUponBy                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isAffectedBy                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isAfflictedBy                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isBeneficialFor                         domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isBiologicalControlAgentOf              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isBreedingMethodOf                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isCausedBy                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isComponentOf                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isComposedOf                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isCompositionOf                         domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isControlMethodOf                       domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isControlledBy                          domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isCropingSystemOf                       domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isCultivationProcessOf                  domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isDerivedFrom                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isDiseaseFor                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isDisorderOf                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isHostFor                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isIncludedIn                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isInfectedPartOf                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isInfluencedBy                          domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isInputFor                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isMadeFrom                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isMeansFor                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isMeasuredBy                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isMemberOf                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isNaturalEnemyOf                        domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isObjectOfActivity                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isOtherLanguageEditionOf                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isOutputFrom                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPartOf                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPathogenOf                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPerformedBy                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPerformedByMeansOf                    domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPhysiologicalFunctionOf               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPortionOf                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPostProductionPracticeFor             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPracticeFor                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPreventedBy                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isProcessFor                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isProducedBy                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPropagationMaterialOf                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPropagationProcessOf                  domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPropertyOf                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isPublishedBy                           domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isReferencedInConceptScopenote          domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isRelatedTypeOf                         domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isSourceOf                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isSpatiallyIncludedIn                   domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isStudiedBy                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isSubprocessOf                          domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isSubstituteFor                         domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isTaxonomicLevelOf                      domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isThemeOf                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isUseOf                                 domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isUsedAs                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isUsedIn                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isUsedToMake                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+isWeedOf                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+makeUseOf                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+measures                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+partitiveRelationship                   domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+performs                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+pestOf                                  domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+precedes                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+prevents                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+produces                                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+productOf                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+publishes                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+quantitativeRelationship                domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+smallerThan                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+spatialRelationships                    domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+spatiallyIncludes                       domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+study                                   domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+surroundedBy                            domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+surrounds                               domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+taxonomicRelationship                   domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+temporalRelationship                    domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+usesProcess                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+usingValue                              domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	                                                
+valueUsedIn                             domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	
+
+
+BETWEEN LEXICALIZATIONS
+FROM THESE, I have to remove inside the program all the properties on the right side of the INVERSEOF TABLE
+																																									(see INVERSEOF TABLE above)
+
+correspondsTo                           domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasAbbreviation                         domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasAcronym                              domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasBroaderSynonym                       domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasChemicalFormula                      domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasDialectalVariant                     domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasLocalName                            domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasNarrowerSynonym                      domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasNearSynonym                          domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasOldName                              domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasRelatedTerm                          domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasScientificName                       domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasScopenoteRelatedToTerm               domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasSymbol                               domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasSynonym                              domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasTradeName                            domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasTranslation                          domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+hasTransliteration                      domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isAbbreviationOf                        domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isAcronymOf                             domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isChemicalFormulaOf                     domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isDialectalVariantOf                    domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isLocalNameOf                           domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isOldNameOf                             domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isSymbolFor                             domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isTermReferencedInScopenote             domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isTradeNameOf                           domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+isTransliterationOf                     domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+sameAs                                  domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization	                                                
+scientificNameOf                        domain: aosc:c_lexicalization	                                                range: aosc:c_lexicalization
+
+**********************
+SPECIFIC MANAGEMENT
+**********************
+
+ENTITY ANNOTATION (KEPT AS THEY ARE, BUT I HAVE TO FOLLOW THEIR PATH FROM CONCEPTS (SEE DATATYPE PROPERTIES))
+hasDefinition                           domain: aosc:c_category	                                                      range: aosc:c_definition	                                                                                                  
+hasImage                                domain: aosc:c_domain_concept	                                                range: aosc:c_image	                                                         
+                      
+**********************
+ CONVERTED INTO SKOS
+**********************                                               
+
+CONVERTED INTO SKOS:SCHEME CODE
+belongsToScheme                         domain: aosc:c_category	                                                      range: aosc:c_classification_scheme	                                         
+hasCategory                             domain: aosc:c_classification_scheme	                                        range: aosc:c_category  
+
+
+SKOS RELATED CONCEPT
+hasRelatedConcept                       domain: aosc:c_domain_concept	                                                range: aosc:c_domain_concept	 
+
+SKOSXL LABEL PROPERTIES (depending on other properties)
+hasLexicalization                       domain: aosc:c_category	                                                      range: aosc:c_lexicalization
+isLexicalizationOf                      domain: aosc:c_lexicalization	                                                range: aosc:c_category	                                                      
+
+SKOS BROADER/NARROWER
+hasSubCategory                          domain: aosc:c_category	                                                      range: aosc:c_category	                                                      
+isSubCategoryOf                         domain: aosc:c_category	                                                      range: aosc:c_category
+
+	   

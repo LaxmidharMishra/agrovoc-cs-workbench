@@ -1,0 +1,157 @@
+WBDatatypeProperty                      domain:                                                                       range:                                                                       
+conceptDomainDatatypeProperty           domain: aosc:c_category	                                                      range:                                                                       
+hasCallNumber                           domain: aosc:c_category	                                                      range:                                                                       
+hasEditorialNote                        domain: aosc:c_category	                                                      range: xsd:string	                                                           
+hasIssnL                                domain: aosc:c_category	                                                      range: xsd:string	                                                           
+hasScopeNote                            domain: aosc:c_category	                                                      range: xsd:string	                                                           
+isHoldBy                                domain: aosc:c_category	                                                      range: xsd:string	                                                           
+isSpatiallyIncludedInCity               domain: aosc:c_category	                                                      range: xsd:string	                                                           
+isSpatiallyIncludedInState              domain: aosc:c_category	                                                      range: xsd:string	                                                           
+takenFromSource                         domain: aosc:c_definition	                                                    range: [Dictionary|Book|AGROVOC|FAOTERM|NAL|Other|Wikipedia|CABI|Wordnet|Journal Article|]	
+hasSourceLink                           domain: aosc:c_definition	                                                    range: xsd:string	                                                           
+isPartOfSubvocabulary                   domain: aosc:c_domain_concept	                                                range: [Geographical below country level|Geographical above country level|Geographical country level|Chemicals|]	
+hasDate                                 domain: aosc:c_domain_concept	                                                range: xsd:string	                                                           
+hasIssn                                 domain: aosc:c_domain_concept	                                                range: xsd:string	                                                           
+hasNumber                               domain: aosc:c_domain_concept	                                                range: xsd:string	                                                           
+hasImageDescription                     domain: aosc:c_image	                                                        range: xsd:string	                                                           
+hasImageLink                            domain: aosc:c_image	                                                        range: xsd:string	                                                           
+hasImageName                            domain: aosc:c_image	                                                        range: xsd:string	                                                           
+hasImageSource                          domain: aosc:c_image	                                                        range: xsd:string	                                                           
+termDomainDatatypeProperty              domain: aosc:c_lexicalization	                                                range:                                                                       
+termEditorialDatatypeProperty           domain: aosc:c_lexicalization	                                                range:                                                                       
+hasTermType                             domain: aosc:c_lexicalization	                                                range: [Acronym|Common name for animals|Common name for bacteria|Common name for fungi|Common name for plants|Common name for viruses|Taxonomic terms for animals|Taxonomic terms for bacteria|Taxonomic terms for fungi|Taxonomic terms for plants|Taxonomic terms for viruses|]	
+isMainLabel                             domain: aosc:c_lexicalization	                                                range: xsd:boolean	                                                          
+hasCodeAgrovoc                          domain: aosc:c_lexicalization	                                                range: xsd:int	                                                              
+hasCodeFaoterm                          domain: aosc:c_lexicalization	                                                range: xsd:int	                                                              
+hasCodeISO3Country                      domain: aosc:c_lexicalization	                                                range: xsd:string	  
+hasCode                                 domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasCodeAsc                              domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasCodeAsfa                             domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasCodeFaoPa                            domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasCodeFishery3Alpha                    domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasCodeTaxonomic                        domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasPlural                               domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasSingular                             domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasSpellingVariant                      domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasStemmedForm                          domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasTermVariant                          domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasDateCreated                          domain: c_category OR c_cl..._scheme OR c_entity_ann... OR c_lexicalization	  range: xsd:date	                                                             
+hasDateLastUpdated                      domain: c_category OR c_cl..._scheme OR c_entity_ann... OR c_lexicalization	  range: xsd:date	                                                             
+conceptEditorialDatatypeProperty        domain: category OR lexicalization	                                          range:                                                                       
+hasStatus                               domain: category OR lexicalization	                                          range: [Revised|Proposed by guest|Published|Validated|Proposed deprecated|Proposed|Deprecated|Revised by guest|]	
+
+
+
+*******************************************
+							CONVERSION:
+*******************************************
+
+************************************
+		REMOVED FOR VARIOUS REASONS
+************************************
+
+DROPPED PROPERTIES
+WBObjectProperty                        domain:                                                                       range:   
+conceptEditorialDatatypeProperty        domain: category OR lexicalization	                                          range:                                                                       
+conceptDomainDatatypeProperty           domain: aosc:c_category	                                                      range:                                                                       
+termDomainDatatypeProperty              domain: aosc:c_lexicalization	                                                range:                                                                       
+termEditorialDatatypeProperty           domain: aosc:c_lexicalization	                                                range:                                                                       
+hasImageName                            domain: aosc:c_image	                                                        range: xsd:string	 			REASON: replaced by rdfs:label  
+hasImageDescription                     domain: aosc:c_image	                                                        range: xsd:string		 		REASON: replaced by rdfs:comment                                                          
+
+
+PROBABLY ON AUTHORITY
+hasIssnL                                domain: aosc:c_category	                                                      range: xsd:string	  --> NEVER FOUND, probably on authority?
+hasIssn                                 domain: aosc:c_domain_concept	                                                range: xsd:string	  --> NEVER FOUND, probably on authority?	                                                           
+hasNumber                               domain: aosc:c_domain_concept	                                                range: xsd:string	  --> NEVER FOUND, probably on authority?	       
+isHoldBy                                domain: aosc:c_category	                                                      range: xsd:string   --> NEVER FOUND, probably on authority?
+isSpatiallyIncludedInCity               domain: aosc:c_category	                                                      range: xsd:string	  --> NEVER FOUND, probably on authority?
+isSpatiallyIncludedInState              domain: aosc:c_category	                                                      range: xsd:string	  --> NEVER FOUND, probably on authority?
+
+************************************
+CONVERTED
+************************************  
+
+
+FROM CONCEPTS TO PLAIN LITERALS (include c_category and c_domain_concept domains):
+
+hasCallNumber                           domain: aosc:c_category	                                                      range:                                                                       
+hasEditorialNote                        domain: aosc:c_category	                                                      range: xsd:string	  --> PLAINLITERAL     
+hasScopeNote                            domain: aosc:c_category	                                                      range: xsd:string	  --> PLAINLITERAL    
+ 
+
+FROM CONCEPTS TO TYPED STRINGS (include c_category and c_domain_concept domains):
+                                                  
+isPartOfSubvocabulary                   domain: aosc:c_domain_concept	                                                range: [Geographical below country level|Geographical above country level|Geographical country level|Chemicals|]	
+hasDate                                 domain: aosc:c_domain_concept	                                                range: xsd:string	                                                                                                               	                                                           
+hasStatus                               domain: category OR lexicalization	                                          range: [Revised|Proposed by guest|Published|Validated|Proposed deprecated|Proposed|Deprecated|Revised by guest|]	
+
+FROM CONCEPTS TO DATE (include c_category and c_domain_concept domains):
+hasDateCreated                          domain: c_category OR c_cl..._scheme OR c_entity_ann... OR c_lexicalization	  range: xsd:date	                                                             
+hasDateLastUpdated                      domain: c_category OR c_cl..._scheme OR c_entity_ann... OR c_lexicalization	  range: xsd:date	                                                             
+
+
+FROM LEXICALIZATIONS TO PLAIN LITERALS
+
+hasPlural                               domain: aosc:c_lexicalization	                                                range: xsd:string	  --> PLAINLITERAL
+hasSingular                             domain: aosc:c_lexicalization	                                                range: xsd:string	  --> PLAINLITERAL
+hasSpellingVariant                      domain: aosc:c_lexicalization	                                                range: xsd:string	  --> PLAINLITERAL
+hasStemmedForm                          domain: aosc:c_lexicalization	                                                range: xsd:string	  --> PLAINLITERAL
+hasTermVariant                          domain: aosc:c_lexicalization	                                                range: xsd:string	  --> PLAINLITERAL
+
+
+FROM LEXICALIZATIONS TO TYPED STRINGS
+
+hasTermType                             domain: aosc:c_lexicalization	                                                range: [Acronym|Common name for animals|Common name for bacteria|Common name for fungi|Common name for plants|Common name for viruses|Taxonomic terms for animals|Taxonomic terms for bacteria|Taxonomic terms for fungi|Taxonomic terms for plants|Taxonomic terms for viruses|]	
+hasCodeISO3Country                      domain: aosc:c_lexicalization	                                                range: xsd:string	  
+hasCode                                 domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasCodeAsc                              domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasCodeAsfa                             domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasCodeFaoPa                            domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasCodeFishery3Alpha                    domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           
+hasCodeTaxonomic                        domain: aosc:c_lexicalization	                                                range: xsd:string	                                                           	                                                           
+hasStatus                               domain: category OR lexicalization	                                          range: [Revised|Proposed by guest|Published|Validated|Proposed deprecated|Proposed|Deprecated|Revised by guest|]	
+
+
+FROM LEXICALIZATIONS TO DATE
+
+hasDateCreated                          domain: c_category OR c_cl..._scheme OR c_entity_ann... OR c_lexicalization	  range: xsd:date	                                                             
+hasDateLastUpdated                      domain: c_category OR c_cl..._scheme OR c_entity_ann... OR c_lexicalization	  range: xsd:date	   
+
+
+FROM LEXICALIZATIONS TO INT
+
+hasCodeAgrovoc                          domain: aosc:c_lexicalization	                                                range: xsd:int	                                                              
+hasCodeFaoterm                          domain: aosc:c_lexicalization	                                                range: xsd:int	                                                              
+
+
+**********************
+SPECIFIC MANAGEMENT
+**********************
+
+ENTITY ANNOTATION 
+
+takenFromSource                         domain: aosc:c_definition	                                                    range: [Dictionary|Book|AGROVOC|FAOTERM|NAL|Other|Wikipedia|CABI|Wordnet|Journal Article|]	
+hasSourceLink                           domain: aosc:c_definition	                                                    range: xsd:string	                                                           
+hasImageLink                            domain: aosc:c_image	                                                        range: xsd:string	                                                           
+hasImageSource                          domain: aosc:c_image	                                                        range: xsd:string	                                                           
+hasDateCreated                          domain: c_category OR c_cl..._scheme OR c_entity_ann... OR c_lexicalization	  range: xsd:date	                                                             
+hasDateLastUpdated                      domain: c_category OR c_cl..._scheme OR c_entity_ann... OR c_lexicalization	  range: xsd:date	                                                             
+rdfs:label															
+rdfs:comment
+
+
+**********************
+ CONVERTED INTO SKOS
+**********************  
+
+CONVERTED INTO SKOS:SCHEME CODE
+
+hasDateCreated                          domain: c_category OR c_cl..._scheme OR c_entity_ann... OR c_lexicalization	  range: xsd:date	                                                             
+hasDateLastUpdated                      domain: c_category OR c_cl..._scheme OR c_entity_ann... OR c_lexicalization	  range: xsd:date	                                                             
+
+SKOS LABEL PROPERTY (not directly converted, but used to assess if a skosxl:Label is connected through skosxl:altLabel skosxl:preferredLabel
+
+isMainLabel                             domain: aosc:c_lexicalization	                                                range: xsd:boolean	                                                          
+
+

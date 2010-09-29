@@ -7,6 +7,7 @@ import it.uniroma2.art.owlart.exceptions.ModelUpdateException;
 import it.uniroma2.art.owlart.exceptions.UnsupportedRDFFormatException;
 import it.uniroma2.art.owlart.io.RDFFormat;
 import it.uniroma2.art.owlart.model.ARTResource;
+import it.uniroma2.art.owlart.model.ARTStatement;
 import it.uniroma2.art.owlart.model.ARTURIResource;
 import it.uniroma2.art.owlart.model.NodeFilters;
 import it.uniroma2.art.owlart.models.DirectReasoning;
@@ -20,6 +21,7 @@ import it.uniroma2.art.owlart.vocabulary.OWL;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashSet;
 
 public class LoadAOSCommonFile {
 
@@ -38,8 +40,8 @@ public class LoadAOSCommonFile {
 		}
 	}
 
-	public static void describePropertyPrettyPrint(SKOSXLModel skosXLModel, String prefix, String propLocalName)
-			throws ModelAccessException {
+	public static void describePropertyPrettyPrint(SKOSXLModel skosXLModel, String prefix,
+			String propLocalName) throws ModelAccessException {
 		String qname = prefix + ":" + propLocalName;
 		System.out.println("\nprefixed name (qname) for " + propLocalName + ": " + qname + "\n");
 
@@ -50,8 +52,8 @@ public class LoadAOSCommonFile {
 
 		System.out.println("\n\n\n\nLIST OF STATEMENTS FOR THIS PROPERTY\n");
 
-		ARTStatementIterator it = skosXLModel.listStatements(property,
-				NodeFilters.ANY, NodeFilters.ANY, true);
+		ARTStatementIterator it = skosXLModel
+				.listStatements(property, NodeFilters.ANY, NodeFilters.ANY, true);
 		while (it.streamOpen()) {
 			System.out.println(it.getNext());
 		}
@@ -234,9 +236,8 @@ public class LoadAOSCommonFile {
 		String aosc = "aosc";
 		skosXLModel.setNsPrefix(aosCommonFileBaseURI_Namespace, aosc);
 
-		//describePropertyPrettyPrint(skosXLModel, aosc, "hasStatus");
+		// describePropertyPrettyPrint(skosXLModel, aosc, "hasStatus");
 
-		
 		ARTURIResourceIterator itURI = skosXLModel.getOWLModel().listObjectProperties(false, aosCommonGraph);
 		System.out.println("OBJECT properties from the aos common vocabulary:");
 		while (itURI.streamOpen()) {
@@ -258,6 +259,32 @@ public class LoadAOSCommonFile {
 		}
 		itURI.close();
 
+		HashSet<ARTURIResource> inverses = new HashSet<ARTURIResource>();
+		ARTStatementIterator statIT = skosXLModel.listStatements(NodeFilters.ANY, OWL.Res.INVERSEOF,
+				NodeFilters.ANY, false, aosCommonGraph);
+		System.out.println("\n\npairs of INVERSE properties from the aos common vocabulary:\n");
+		while (statIT.streamOpen()) {
+			ARTStatement stat = statIT.getNext();
+			ARTURIResource subj = stat.getSubject().asURIResource();
+			ARTURIResource obj = stat.getObject().asURIResource();
+			// first option: subj or obj is the same, since I store both to them; it is necessary because
+			// I may invert some of them if I find some "has" or "is" as prefix in their in the name (I keep
+			// the "has" as subject, thus I will keep the "has" triples in the conversion, and discard the
+			// "is")
+			// second condition is because probably Protege has expanded the symmetric properties into
+			// inverseof themselves, and I discard these triples too
+			if (!inverses.contains(subj) && !subj.equals(obj)) {
+				inverses.add(subj);
+				inverses.add(obj);
+				if (subj.getLocalName().startsWith("is") || obj.getLocalName().startsWith("has"))
+					System.out.printf("%-40s|                  %-70s\n", skosXLModel.getQName(obj.getURI()),
+							skosXLModel.getQName(subj.getURI()));
+				else
+					System.out.printf("%-40s|                  %-70s\n", skosXLModel.getQName(subj.getURI()),
+							skosXLModel.getQName(obj.getURI()));
+			}
+		}
+		statIT.close();
 
 		/*
 		 * 
