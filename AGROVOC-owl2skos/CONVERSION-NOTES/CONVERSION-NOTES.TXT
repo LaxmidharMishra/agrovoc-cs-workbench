@@ -1,0 +1,54 @@
+CONVERSION ALGORITHM:
+
+SETUP:
+
+Data file used for analyzing AGROVOC is the one published on googlecode site of agrovoc workbench:
+http://code.google.com/p/agrovoc-cs-workbench
+as: 1_agrovoc_wb_20100628.nt
+
+for a series of reasons, we did not carry a 1-1 triple conversion. We instead:
+
+1) prepared a list of all property descriptions, sorting alphabetically them by:
+     a. domain
+     b. range
+     c. their name
+   and prepared different "bags of properties" which were used to convert data triples based on them, in different ways
+   
+   see documents with original properties and info related to conversion actions:
+     a. OBJECT PROPERTIES.txt
+     b. DATATYPE PROPERTIES.txt
+     
+   also, I prepared a list of inverseOf relationships, and I will assert only triples from one of every X,Y pairs of
+   properties, s.t. X invOf Y.
+   
+2) converted a few concepts into SKOS-XL ones, dropped or converted remaining ones (see document CONCEPTS.txt
+   with concept mappings and explanations)
+
+3) Istance data has been converted following this name-mapping:
+   - concepts: 						names like: c_330829 and i_330829 have been collapsed into: c_330829
+   												[ method getSKOSConceptFromOWLInstance(...) ]
+   - lexicalizations: 		names like: i_en_234534234 converted to xl_en_234534234
+   												[ method getSKOSXLLabelFromOWLCNOUN(...) ]
+   
+ALGORITHM
+
+1) for all root concepts, convert it and start to dive vertically down to the leaves. Note: there should be 
+   no multiple inheritance, and if there are some exceptions, then the worst that can happen is that some
+   concept/node-in-the-tree will be visited/converted more than once, in any case there is no data
+   duplication: triples are unique (in the same named graph).
+   
+   1a) root concepts include only those children of c_domain_concept, there seems to be no child of
+       C_CLASSIFICATION_SCHEME. In case, they can be added easily
+
+2) For each concept to convert:
+   - collapse its c_... class and i_... instance into a single skos concept
+   - convert all the properties appropriately (convert, keep-as-it-is, drop, see descriptions files of
+     property conversion), and convert names of pointed concepts according to point 3 of SETUP
+     - follow specific path to dereferenciate entity_annotations
+     - convert lexicalizations
+     - do not convert on the right side of those listed in the inverseOf lists (see OBJECT PROPERTIES.txt)
+
+3) for each lexicalization to convert:
+   - change name from i_<lang>_<digitscode> to xl_<lang>_<digitscode>
+   - same as for concept conversion, but with its properties
+	 

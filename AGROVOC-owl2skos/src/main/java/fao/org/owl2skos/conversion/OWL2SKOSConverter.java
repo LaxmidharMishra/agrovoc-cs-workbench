@@ -7,7 +7,6 @@ import it.uniroma2.art.owlart.io.RDFFormat;
 import it.uniroma2.art.owlart.model.ARTURIResource;
 import it.uniroma2.art.owlart.model.NodeFilters;
 import it.uniroma2.art.owlart.models.SKOSXLModel;
-import it.uniroma2.art.owlart.vocabulary.SKOSXL;
 import it.uniroma2.art.owlart.vocabulary.XmlSchema;
 
 import java.io.File;
@@ -18,19 +17,26 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import edu.stanford.smi.protege.model.Project;
+import edu.stanford.smi.protegex.owl.model.OWLDatatypeProperty;
 import edu.stanford.smi.protegex.owl.model.OWLIndividual;
 import edu.stanford.smi.protegex.owl.model.OWLNamedClass;
+import edu.stanford.smi.protegex.owl.model.OWLObjectProperty;
+import edu.stanford.smi.protegex.owl.model.OWLProperty;
 import edu.stanford.smi.protegex.owl.model.RDFProperty;
 import edu.stanford.smi.protegex.owl.model.RDFResource;
 import edu.stanford.smi.protegex.owl.model.RDFSLiteral;
+import edu.stanford.smi.protegex.owl.model.RDFSNames;
 
 public class OWL2SKOSConverter {
 
 	public static final String SesameModelFactoryImplClassName = "it.uniroma2.art.owlart.sesame2impl.factory.ARTModelFactorySesame2Impl";
 	public static final String agrovocBaseURI = "http://aims.fao.org/aos/agrovoc";
-	public static final String agrovocSchemeURI = agrovocBaseURI + "/"	+ "agrovocScheme";
+	public static final String agrovocSchemeURI = agrovocBaseURI + "/" + "agrovocScheme";
 	public static final String agrovocDefNamespace = agrovocBaseURI + "/";
 	public static final String agrovocDefNamespacePrefix = "agrovoc";
+
+	public static OWLProperty rdfsComment;
+	public static OWLProperty rdfsLabel;
 
 	public static enum ResType {
 		label, instance
@@ -51,10 +57,15 @@ public class OWL2SKOSConverter {
 
 		logger.info("cdomainConcept: " + Vocabulary.c_domain_concept);
 
+		rdfsLabel = protOWLModel.getOWLProperty(RDFSNames.Slot.LABEL);
+		rdfsComment = protOWLModel.getOWLProperty(RDFSNames.Slot.COMMENT);
+
 		// logger.info("hasLexicalization: " + hasLexicalization.getBrowserText());
 	}
 
 	public void convert() throws ModelUpdateException, ModelAccessException {
+
+		ConversionPropertyLists.initialize(protOWLModel);
 
 		// adds the agrovoc scheme as the unique scheme (and default scheme for SKOS API)
 		initializeAgrovocScheme();
@@ -63,11 +74,10 @@ public class OWL2SKOSConverter {
 		// scheme
 		Collection<OWLNamedClass> rootConcepts = convertRootConcepts();
 
-		
 		// **************************************
 		// CONCEPTS CONVERSION
 		// *************************************
-		
+
 		// recursive descent along the tree, converting all concepts
 		for (OWLNamedClass cls : rootConcepts) {
 			exploreConcept(cls);
@@ -86,21 +96,94 @@ public class OWL2SKOSConverter {
 	@SuppressWarnings("unchecked")
 	public void convertInstance(OWLIndividual ind, ARTURIResource skosConcept) throws ModelUpdateException,
 			ModelAccessException {
-		
+
+		System.out.print("converting concept: " + ind);
 		
 		// **************************************
-		// LEXICALIZATION CONVERSION
+		// CONCEPT PROPERTIES CONVERSION
 		// *************************************
 
+		// convertDatatypePlainLiteralLanguageProperty(ind, skosConcept, rdfsLabel);
+		// convertDatatypePlainLiteralLanguageProperty(ind, skosConcept, rdfsComment);
+
+		System.out.print("|its properties...");
+		
+		for (OWLObjectProperty prop : ConversionPropertyLists.conceptToConcept) {
+			convertObjectProperty(ind, skosConcept, prop, ResType.instance);
+		}
+
+		for (OWLDatatypeProperty prop : ConversionPropertyLists.conceptToPlainLiterals) {
+			convertDatatypePlainLiteralLanguageProperty(ind, skosConcept, prop);
+		}
+
+		for (OWLDatatypeProperty prop : ConversionPropertyLists.conceptToTypeStrings) {
+			convertDatatypeStringTypedProperty(ind, skosConcept, prop);
+		}
+
+		for (OWLDatatypeProperty prop : ConversionPropertyLists.conceptToTypeDates) {
+			convertDatatypeDateTypedProperty(ind, skosConcept, prop);
+		}
+
+		// **************************************
+		// ENTITY ANNOTATIONS CONVERSION
+		// *************************************
+
+		System.out.print("|its entity annotations...");
+		
+		// HAS DEFINITION CONVERSION
+		Collection<OWLIndividual> hasDefinitions = ind.getPropertyValues(Vocabulary.hasDefinition);
+		for (OWLIndividual definition : hasDefinitions) {
+			ARTURIResource newDef = convertDefinitionName(definition);
+
+			// adding the hasDefinition triple with modified name
+			skosXLModel.addTriple(skosConcept, skosXLModel.createURIResource(Vocabulary.hasDefinition
+					.getURI()), newDef);
+
+			// LABELS
+			Collection<RDFSLiteral> labels = definition.getLabels();
+			if (labels.size() != 1)
+				throw new IllegalStateException(
+						"there should be only one label per c_definition!, while here we have: " + labels);
+
+			RDFSLiteral label = labels.iterator().next();
+			skosXLModel.addLabel(newDef, label.getString(), label.getLanguage());
+
+			// COMMENTS
+			Collection<RDFSLiteral> comments = definition.getComments();
+			if (comments.size() != 1)
+				throw new IllegalStateException(
+						"there should be only one comment per c_definition!, while here we have: " + comments);
+
+			RDFSLiteral comment = comments.iterator().next();
+			skosXLModel.addComment(newDef, comment.getString(), comment.getLanguage());
+
+			// OTHER PROPERTIES OF DEFINITION
+			convertDatatypeStringTypedProperty(definition, newDef, Vocabulary.takenFromSource);
+			convertDatatypeStringTypedProperty(definition, newDef, Vocabulary.hasSourceLink);
+			convertDatatypeDateTypedProperty(  definition, newDef, Vocabulary.hasDateCreated);
+			convertDatatypeDateTypedProperty(  definition, newDef, Vocabulary.hasDateLastUpdated);			
+		}
+		
+		// NO CONVERSION FOR HAS_IMAGE, SINCE THERE IS NO DATA FOR THAT
+		
+
+		// **************************************
+		// LEXICALIZATIONS CONVERSION
+		// *************************************
+
+		System.out.print("|its lexicalizations...");
+		
 		Collection<OWLIndividual> lexicalizations = ind.getPropertyValues(Vocabulary.hasLexicalization);
 		for (OWLIndividual lexicalization : lexicalizations) {
 
-			// label
+			ARTURIResource skosLex = getSKOSXLLabelFromOWLCNOUN(lexicalization);
+
+			// LABELS
 			Collection<RDFSLiteral> labels = lexicalization.getLabels();
 			if (labels.size() != 1)
 				throw new IllegalStateException(
 						"there should be only one label per Lexicalization!, while here we have: " + labels);
-			ARTURIResource skosLex = getSKOSXLLabelFromOWLCNOUN(lexicalization);
+
 			RDFSLiteral label = labels.iterator().next();
 			skosXLModel.addXLabel(skosLex.getURI(), label.getString(), label.getLanguage());
 
@@ -127,166 +210,36 @@ public class OWL2SKOSConverter {
 				}
 			}
 
-			// DATATYPE RELATIONSHIPS FOR LEXICALIZATON
+			// LEXICALIZATION PROPERTIES CONVERSION
 
-			// hasSpellingVariant
-			convertDatatypeLanguageProperty(lexicalization, skosLex, Vocabulary.hasSpellingVariant);
+			for (OWLObjectProperty prop : ConversionPropertyLists.lexicalizationToLexicalization) {
+				convertObjectProperty(lexicalization, skosLex, prop, ResType.label);
+			}
 
-			// hasCodeAgrovoc code
-			convertPlainDatatypeINTProperty(lexicalization, skosLex, Vocabulary.hasCodeAgrovoc);
+			for (OWLDatatypeProperty prop : ConversionPropertyLists.lexicalizationToPlainLiterals) {
+				convertDatatypePlainLiteralLanguageProperty(lexicalization, skosLex, prop);
+			}
 
-			// hasCodeFaoterm code
-			convertPlainDatatypeINTProperty(lexicalization, skosLex, Vocabulary.hasCodeFaoterm);
+			for (OWLDatatypeProperty prop : ConversionPropertyLists.lexicalizationToTypeStrings) {
+				convertDatatypeStringTypedProperty(lexicalization, skosLex, prop);
+			}
 
-			// TODO is it concrete?
-			// hasCode code
-			convertPlainDatatypeStringProperty(lexicalization, skosLex, Vocabulary.hasCode);
+			for (OWLDatatypeProperty prop : ConversionPropertyLists.lexicalizationToTypeDates) {
+				convertDatatypeDateTypedProperty(lexicalization, skosLex, prop);
+			}
 
-			// hasCodeFaoPa code
-			convertPlainDatatypeStringProperty(lexicalization, skosLex, Vocabulary.hasCodeFaoPa);
-
-			// hasCodeAsc code
-			convertPlainDatatypeStringProperty(lexicalization, skosLex, Vocabulary.hasCodeAsc);
-
-			// hasCodeAsfa code
-			convertPlainDatatypeStringProperty(lexicalization, skosLex, Vocabulary.hasCodeAsfa);
-
-			// hasCodeTaxonomic code
-			convertPlainDatatypeStringProperty(lexicalization, skosLex, Vocabulary.hasCodeTaxonomic);
-
-			// TODO this is no more in the vocabulary I think! I removed this cause it is throwing a null
-			// pointer exception due to a null reference
-			// hasFishery3AlphaCode code
-			// logger.info("predicate hasFishery3AlphaCode: " + Vocabulary.hasFishery3AlphaCode);
-			// convertPlainDatatypeStringProperty(lexicalization, skosLex, Vocabulary.hasFishery3AlphaCode);
-
-			// hasDateCreated
-			convertPlainDatatypeStringProperty(lexicalization, skosLex, Vocabulary.hasDateCreated);
-
-			// hasDateLastUpdated
-			convertPlainDatatypeStringProperty(lexicalization, skosLex, Vocabulary.hasDateLastUpdated);
-
-			// hasStatus
-			convertPlainDatatypeStringProperty(lexicalization, skosLex, Vocabulary.hasStatus);
-
-			// hasTermType
-			convertPlainDatatypeStringProperty(lexicalization, skosLex, Vocabulary.hasTermType);
-
-			// OBJECT PROPERTY RELATIONSHIPS FOR LEXICALIZATON
-
-			// hasTranslation
-			convertPlainObjectProperty(lexicalization, skosLex, Vocabulary.hasTranslation, ResType.label);
-
-			// hasRelatedTerm
-			// this is a concrete property, since it is being used when no better specific relation has being
-			// found between two terms. It has been converted to a SKOS-XL LabelRelation, though its use
-			// should not be encouraged (LabelRelation should be mostly abstract, an extension point for
-			// grouping specific concrete relation properties)
-			convertPlainObjectProperty(lexicalization, skosLex, Vocabulary.hasRelatedTerm,
-					SKOSXL.Res.LABELRELATION, ResType.label);
-
-			// isAbbreviationOf
-			convertPlainObjectProperty(lexicalization, skosLex, Vocabulary.isAbbreviationOf, ResType.label);
-
-			// hasAcronym
-			convertPlainObjectProperty(lexicalization, skosLex, Vocabulary.hasAcronym, ResType.label);
-
-			// hasSynonym
-			convertPlainObjectProperty(lexicalization, skosLex, Vocabulary.hasSynonym, ResType.label);
-
-			// hasBroaderSynonym
-			convertPlainObjectProperty(lexicalization, skosLex, Vocabulary.hasBroaderSynonym, ResType.label);
-
-			// **************************************
-			// END OF LEXICALIZATION CONVERSION!
-			// *************************************
+			for (OWLDatatypeProperty prop : ConversionPropertyLists.lexicalizationToTypeInts) {
+				convertDatatypeINTTypedProperty(lexicalization, skosLex, prop);
+			}
 
 		}
-
-		// **************************************
-		// DIRECT CONCEPT PROPERTIES CONVERSION
-		// *************************************
-
-		// DATATYPE PROPERTIES
-
-		// hasDateCreated
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.hasDateCreated);
-
-		// hasDateLastUpdated
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.hasDateLastUpdated);
-
-		// hasStatus
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.hasStatus);
-
-		// hasScopeNote
-		convertDatatypeLanguageProperty(ind, skosConcept, Vocabulary.hasScopeNote);
-
-		// hasEditorialNote
-		convertDatatypeLanguageProperty(ind, skosConcept, Vocabulary.hasEditorialNote);
-
-		// takenFromSource
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.takenFromSource);
-
-		// hasSourceLink
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.hasSourceLink);
-
-		// hasImageLink
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.hasImageLink);
-
-		// hasImageSource
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.hasImageSource);
-
-		// hasNumber
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.hasNumber);
-
-		// hasDate
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.hasDate);
-
-		// isSpatiallyIncludedInCity
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.isSpatiallyIncludedInCity);
-
-		// isSpatiallyIncludedInState
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.isSpatiallyIncludedInState);
-
-		// isPartOfSubvocabulary
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.isPartOfSubvocabulary);
-
-		// hasIssn
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.hasIssn);
-
-		// hasIssnL
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.hasIssnL);
-
-		// isHoldBy
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.isHoldBy);
-
-		// hasCallNumber
-		convertPlainDatatypeStringProperty(ind, skosConcept, Vocabulary.hasCallNumber);
-
-		// OBJECT PROPERTIES
-
-		// isSpatiallyIncludedIn
-		convertPlainObjectProperty(ind, skosConcept, Vocabulary.isSpatiallyIncludedIn, ResType.instance);
-
-		// isPartOf
-		convertPlainObjectProperty(ind, skosConcept, Vocabulary.isPartOf, ResType.instance);
-
-		// isPublishedBy
-		convertPlainObjectProperty(ind, skosConcept, Vocabulary.isPublishedBy, ResType.instance);
-
-		// isOtherLanguageEditionOf
-		convertPlainObjectProperty(ind, skosConcept, Vocabulary.isOtherLanguageEditionOf, ResType.instance);
-
-		// follows
-		convertPlainObjectProperty(ind, skosConcept, Vocabulary.follows, ResType.instance);
-
-		// precedes
-		convertPlainObjectProperty(ind, skosConcept, Vocabulary.precedes, ResType.instance);
+		
+		System.out.println("|concept converted");
 
 	}
 
 	@SuppressWarnings("unchecked")
-	void convertDatatypeLanguageProperty(RDFResource owlSubject, ARTURIResource skosSubject,
+	void convertDatatypePlainLiteralLanguageProperty(RDFResource owlSubject, ARTURIResource skosSubject,
 			RDFProperty predicate) throws ModelUpdateException {
 		Collection<RDFSLiteral> values = owlSubject.getPropertyValues(predicate);
 		for (RDFSLiteral value : values) {
@@ -296,7 +249,7 @@ public class OWL2SKOSConverter {
 	}
 
 	@SuppressWarnings("unchecked")
-	void convertPlainDatatypeStringProperty(RDFResource owlSubject, ARTURIResource skosSubject,
+	void convertDatatypeStringTypedProperty(RDFResource owlSubject, ARTURIResource skosSubject,
 			RDFProperty predicate) throws ModelUpdateException {
 		Collection<String> values = owlSubject.getPropertyValues(predicate);
 		for (String value : values) {
@@ -305,8 +258,19 @@ public class OWL2SKOSConverter {
 		}
 	}
 
+	// NOT SURE IF VALUE IS A DATE!!!
 	@SuppressWarnings("unchecked")
-	void convertPlainDatatypeINTProperty(RDFResource owlSubject, ARTURIResource skosSubject,
+	void convertDatatypeDateTypedProperty(RDFResource owlSubject, ARTURIResource skosSubject,
+			RDFProperty predicate) throws ModelUpdateException {
+		Collection<String> values = owlSubject.getPropertyValues(predicate);
+		for (String value : values) {
+			skosXLModel.addTriple(skosSubject, skosXLModel.createURIResource(predicate.getURI()), skosXLModel
+					.createLiteral(value.toString(), XmlSchema.Res.DATE));
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	void convertDatatypeINTTypedProperty(RDFResource owlSubject, ARTURIResource skosSubject,
 			RDFProperty predicate) throws ModelUpdateException {
 		Collection<Integer> values = owlSubject.getPropertyValues(predicate);
 		for (Integer value : values) {
@@ -336,9 +300,8 @@ public class OWL2SKOSConverter {
 	 * @throws ModelUpdateException
 	 */
 	@SuppressWarnings("unchecked")
-	void convertPlainObjectProperty(RDFResource owlSubject, ARTURIResource skosSubject,
-			RDFProperty owlPredicate, ARTURIResource skosPredicate, ResType resType)
-			throws ModelUpdateException {
+	void convertObjectProperty(RDFResource owlSubject, ARTURIResource skosSubject, RDFProperty owlPredicate,
+			ARTURIResource skosPredicate, ResType resType) throws ModelUpdateException {
 		Collection<RDFResource> values = owlSubject.getPropertyValues(owlPredicate);
 		for (RDFResource value : values) {
 			ARTURIResource object = null;
@@ -352,8 +315,8 @@ public class OWL2SKOSConverter {
 
 	/**
 	 * as for
-	 * {@link #convertPlainObjectProperty(RDFResource, ARTURIResource, RDFProperty, ARTURIResource, ResType)}
-	 * with the <code>predicate</code> being passed as <code>owlPredicate</code> of that method, and this same
+	 * {@link #convertObjectProperty(RDFResource, ARTURIResource, RDFProperty, ARTURIResource, ResType)} with
+	 * the <code>predicate</code> being passed as <code>owlPredicate</code> of that method, and this same
 	 * predicate being converted to SKOS-XL API resource, with the same URI. <br/>
 	 * This method is being used when a property is left as it is in the new vocabulary.
 	 * 
@@ -368,10 +331,10 @@ public class OWL2SKOSConverter {
 	 *            or skos concepts (instance) and thus drives the conversion of their URI
 	 * @throws ModelUpdateException
 	 */
-	void convertPlainObjectProperty(RDFResource owlSubject, ARTURIResource skosSubject,
-			RDFProperty predicate, ResType resType) throws ModelUpdateException {
-		convertPlainObjectProperty(owlSubject, skosSubject, predicate, skosXLModel
-				.createURIResource(predicate.getURI()), resType);
+	void convertObjectProperty(RDFResource owlSubject, ARTURIResource skosSubject, RDFProperty predicate,
+			ResType resType) throws ModelUpdateException {
+		convertObjectProperty(owlSubject, skosSubject, predicate, skosXLModel.createURIResource(predicate
+				.getURI()), resType);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -419,6 +382,11 @@ public class OWL2SKOSConverter {
 
 	protected ARTURIResource getSKOSXLLabelFromOWLCNOUN(RDFResource owlInstance) {
 		String conceptLocalName = owlInstance.getLocalName().replace("i_", "xl_");
+		return skosXLModel.createURIResource(skosXLModel.getDefaultNamespace() + conceptLocalName);
+	}
+
+	protected ARTURIResource convertDefinitionName(RDFResource owlInstance) {
+		String conceptLocalName = owlInstance.getLocalName().replace("i_", "c_");
 		return skosXLModel.createURIResource(skosXLModel.getDefaultNamespace() + conceptLocalName);
 	}
 
