@@ -141,21 +141,34 @@ public class OWL2SKOSConverter {
 
 			// LABELS
 			Collection<RDFSLiteral> labels = definition.getLabels();
-			if (labels.size() != 1)
+			
+			/*if (labels.size() != 1)
 				throw new IllegalStateException(
 						"there should be only one label per c_definition!, while here we have: " + labels);
 
 			RDFSLiteral label = labels.iterator().next();
-			skosXLModel.addLabel(newDef, label.getString(), label.getLanguage());
+			skosXLModel.addLabel(newDef, label.getString(), label.getLanguage());*/
+			
+			// one label per language per definition is allowed so should not restrict to only one label
+			for(RDFSLiteral label: labels)
+			{
+				skosXLModel.addLabel(newDef, label.getString(), label.getLanguage());
+			}
+			
 
 			// COMMENTS
-			Collection<RDFSLiteral> comments = definition.getComments();
+			// rdfs:comments is not used for definition but will be used for image conversion
+			/*Collection<RDFSLiteral> comments = definition.getComments();
+			
 			if (comments.size() != 1)
 				throw new IllegalStateException(
 						"there should be only one comment per c_definition!, while here we have: " + comments);
 
 			RDFSLiteral comment = comments.iterator().next();
 			skosXLModel.addComment(newDef, comment.getString(), comment.getLanguage());
+			*/
+			
+			
 
 			// OTHER PROPERTIES OF DEFINITION
 			convertDatatypeStringTypedProperty(definition, newDef, Vocabulary.takenFromSource);
