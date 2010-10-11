@@ -1,0 +1,26 @@
+CONCEPTS:
+
+- still to be removed: C_ENTITY_ANNOTATION
+- also, find a better replacement for the two subclasses of C_ENTITY_ANNOTATION
+
+OBJECT PROPERTIES:
+
+- everything as foreseen, nothing still to be done
+
+DATATYPE PROPERTIES:
+
+- following properties:
+		conceptEditorialDatatypeProperty 
+		conceptDomainDatatypeProperty    
+		termDomainDatatypeProperty       
+		termEditorialDatatypeProperty    
+	need to be removed and domain/ranges need to be set explicitly (currently they act as abstract properties for letting other props inherit domain/range)
+	
+- The following properties:
+		hasPlural          
+		hasSingular        
+		hasSpellingVariant 
+		hasStemmedForm     
+		hasTermVariant     
+	have got their range corrected from xsd:string to plain literal, as they are actually used in the workbench.
+	However, on a second stage, they should be changed to use more appropriate properties from skos.

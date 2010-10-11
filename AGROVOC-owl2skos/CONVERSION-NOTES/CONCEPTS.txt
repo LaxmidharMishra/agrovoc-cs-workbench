@@ -1,10 +1,8 @@
-C_CATEGORY	 							DROPPED										never used in the data, just a superclass of c_domain_concept, and there is no other subconcept, so really redundant
-C_DOMAIN_CONCEPT	 				CONVERTED 								to skos:Concept in the main scheme
-C_CLASSIFICATION_SCHEME		CONVERTED									to skos:ConceptScheme
-C_ENTITY_ANNOTATION				DROPPED										see C_DEFINITION AND C_IMAGE. It's only used as a container for both in the domain of hasDateCreated and hasDateLastUpdated, really not worth
-C_DEFINITION							KEPT-AS-IT-IS							for the moment, until we find at least a better waiting to find something better. However, renamed to Definition
-C_IMAGE										KEPT-AS-IT-IS							for the moment, until we find at least a better waiting to find something better. However, renamed to Image
-C_LEXICALIZATION					DROPPED										never used in the data, just a superclass of C_NOUN
-C_NOUN										CONVERTED									to skosxl:Label
-
-	
+C_CATEGORY	 							DROPPED									never used in the data, just a superclass of c_domain_concept, and there is no other subconcept, so really redundant, refs moved to skos:Concept
+C_DOMAIN_CONCEPT	 				CONVERTED								to skos:Concept in the main scheme
+C_CLASSIFICATION_SCHEME		CONVERTED 							to skos:ConceptScheme
+C_ENTITY_ANNOTATION				DROPPED									see C_DEFINITION AND C_IMAGE. It's only used as a container for both in the domain of hasDateCreated and hasDateLastUpdated, really not worth
+C_DEFINITION							KEPT-AS-IT-IS						for the moment, until we find at least a better waiting to find something better. However, renamed to Definition
+C_IMAGE										KEPT-AS-IT-IS						for the moment, until we find at least a better waiting to find something better. However, renamed to Image
+C_LEXICALIZATION					DROPPED									never used in the data, just a superclass of C_NOUN
+C_NOUN										CONVERTED								to skosxl:Label
