@@ -51,7 +51,7 @@ hasStatus                               domain: category OR lexicalization	     
 ************************************
 
 DROPPED PROPERTIES
-WBObjectProperty                        domain:                                                                       range:   
+WBDatatypeProperty                      domain:                                                                       range:   
 conceptEditorialDatatypeProperty        domain: category OR lexicalization	                                          range:                                                                       
 conceptDomainDatatypeProperty           domain: aosc:c_category	                                                      range:                                                                       
 termDomainDatatypeProperty              domain: aosc:c_lexicalization	                                                range:                                                                       
