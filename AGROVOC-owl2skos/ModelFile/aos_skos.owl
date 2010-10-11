@@ -18,6 +18,7 @@
     <rdfs:comment xml:lang="en">Last revised by Prashanta 20100421: Changed default namespace from "http://www.fao.org/aims/aos/" to "http://aims.fao.org/aos/common"</rdfs:comment>
     <rdfs:comment xml:lang="en">Last revised by KCEW 2008: set the correct namespaces for xmlns, xml:base, and owl:Ontology.</rdfs:comment>
     <rdfs:comment xml:lang="en">Last revised by Prashanta 20100210: Changed default namespace from "http://aims.fao.org/aos/v1.0/" to "http://www.fao.org/aims/aos/"</rdfs:comment>
+    <owl:imports rdf:resource="http://www.w3.org/2008/05/skos-xl"/>
     <rdfs:comment xml:lang="en">Last revised by KCEW 20091002: added all relationships by hand (no from conversion routine due to difficulties in the linkType table field linkabr).</rdfs:comment>
     <rdfs:comment xml:lang="en">Last revised by KCEW 20080508: removed all remaining instances.</rdfs:comment>
     <rdfs:comment xml:lang="en">Last revised by Prashanta 20100427: added new relationship hasSubstitute under essiveRelationship. Moved isSubstituteFor to essiveRelationship.</rdfs:comment>
@@ -30,27 +31,19 @@
     <rdfs:comment xml:lang="en">Last revised by KCEW 20090730: added some relationshios for conversion from legacy database.</rdfs:comment>
     <rdfs:comment xml:lang="en">Last revised by Sachit 20100324: added new relationship hasIssn</rdfs:comment>
     <rdfs:comment xml:lang="en">Last revised by Armando 20101011: first stage of porting vocabulary to SKOS/SKOS-XL"</rdfs:comment>
-    <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
   <owl:Ontology rdf:about="http://aims.fao.org/aos/common/skos"/>
-  <owl:Class rdf:about="http://aims.fao.org/aos/common/c_definition">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="http://aims.fao.org/aos/common/c_entity_annotation"/>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Definition</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
-  <owl:Class rdf:about="http://aims.fao.org/aos/common/c_image">
-    <rdfs:label xml:lang="en">Image</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="http://aims.fao.org/aos/common/c_entity_annotation"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.w3.org/2008/05/skos-xl#Label"/>
-  <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-  <owl:Class rdf:about="http://aims.fao.org/aos/common/c_entity_annotation">
+  <owl:Class rdf:about="http://aims.fao.org/aos/common/EntityAnnotation">
     <rdfs:comment xml:lang="en">This class is used to group all characteristics of concepts, such as definitions, images, etc.</rdfs:comment>
     <rdfs:label xml:lang="en">Entity annotation</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://aims.fao.org/aos/common/Definition">
+    <rdfs:subClassOf rdf:resource="http://aims.fao.org/aos/common/EntityAnnotation"/>
+    <rdfs:label xml:lang="en">Definition</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://aims.fao.org/aos/common/Image">
+    <rdfs:subClassOf rdf:resource="http://aims.fao.org/aos/common/EntityAnnotation"/>
+    <rdfs:label xml:lang="en">Image</rdfs:label>
   </owl:Class>
   <owl:ObjectProperty rdf:about="http://aims.fao.org/aos/common/isReferencedInConceptScopenote">
     <rdfs:label xml:lang="en">Is referenced in concept scopenote</rdfs:label>
@@ -109,10 +102,10 @@
       <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
     </rdfs:subPropertyOf>
     <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:domain rdf:resource="http://aims.fao.org/aos/common/c_image"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://aims.fao.org/aos/common/hasImage"/>
     </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://aims.fao.org/aos/common/Image"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://aims.fao.org/aos/common/isSpatiallyIncludedIn">
     <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -429,13 +422,13 @@
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://aims.fao.org/aos/common/isDefinitionOf">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
-    <rdfs:domain rdf:resource="http://aims.fao.org/aos/common/c_definition"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:label xml:lang="it">E' la definizione di</rdfs:label>
-    <rdfs:label xml:lang="en">Is definition of</rdfs:label>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://aims.fao.org/aos/common/hasDefinition"/>
     </owl:inverseOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label xml:lang="it">E' la definizione di</rdfs:label>
+    <rdfs:label xml:lang="en">Is definition of</rdfs:label>
+    <rdfs:domain rdf:resource="http://aims.fao.org/aos/common/Definition"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://aims.fao.org/aos/common/isPostProductionPracticeFor">
     <owl:inverseOf>
@@ -1154,10 +1147,10 @@
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://aims.fao.org/aos/common/hasImage">
     <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:range rdf:resource="http://aims.fao.org/aos/common/c_image"/>
+    <rdfs:label xml:lang="en">Has image</rdfs:label>
     <owl:inverseOf rdf:resource="http://aims.fao.org/aos/common/isImageOf"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
-    <rdfs:label xml:lang="en">Has image</rdfs:label>
+    <rdfs:range rdf:resource="http://aims.fao.org/aos/common/Image"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://aims.fao.org/aos/common/controls">
     <rdfs:subPropertyOf>
@@ -1426,12 +1419,12 @@
     <owl:inverseOf rdf:resource="http://aims.fao.org/aos/common/hasComponent"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://aims.fao.org/aos/common/hasDefinition">
-    <rdfs:range rdf:resource="http://aims.fao.org/aos/common/c_definition"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
     <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="it">Definizione</rdfs:label>
     <rdfs:label xml:lang="en">Definition</rdfs:label>
     <owl:inverseOf rdf:resource="http://aims.fao.org/aos/common/isDefinitionOf"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
+    <rdfs:range rdf:resource="http://aims.fao.org/aos/common/Definition"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://aims.fao.org/aos/common/isSubprocessOf">
     <rdfs:label xml:lang="en">Is subprocess of</rdfs:label>
@@ -1514,10 +1507,10 @@
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://aims.fao.org/aos/common/hasImageSource">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="http://aims.fao.org/aos/common/c_image"/>
+    <rdfs:comment xml:lang="en">The source of an image is the institution, web site, etc. where the image has been taken from.</rdfs:comment>
     <rdfs:label xml:lang="en">Source for the image</rdfs:label>
     <rdfs:label xml:lang="en">Has image source</rdfs:label>
-    <rdfs:comment xml:lang="en">The source of an image is the institution, web site, etc. where the image has been taken from.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://aims.fao.org/aos/common/Image"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://aims.fao.org/aos/common/hasCode">
     <rdfs:label xml:lang="en">Codes</rdfs:label>
@@ -1697,7 +1690,7 @@
           <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
           <owl:Class rdf:about="http://www.w3.org/2008/05/skos-xl#Label"/>
           <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-          <owl:Class rdf:about="http://aims.fao.org/aos/common/c_entity_annotation"/>
+          <owl:Class rdf:about="http://aims.fao.org/aos/common/EntityAnnotation"/>
         </owl:unionOf>
       </owl:Class>
     </rdfs:domain>
@@ -1766,8 +1759,8 @@
   <owl:FunctionalProperty rdf:about="http://aims.fao.org/aos/common/hasImageLink">
     <rdfs:label xml:lang="en">URL link for the image</rdfs:label>
     <rdfs:comment xml:lang="en">The link to the physical image, for example the URL, where the image is available.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://aims.fao.org/aos/common/c_image"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://aims.fao.org/aos/common/Image"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </owl:FunctionalProperty>
   <owl:FunctionalProperty rdf:about="http://aims.fao.org/aos/common/hasIssn">
@@ -1823,7 +1816,7 @@
         <owl:unionOf rdf:parseType="Collection">
           <owl:Class rdf:about="http://www.w3.org/2008/05/skos-xl#Label"/>
           <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
-          <owl:Class rdf:about="http://aims.fao.org/aos/common/c_entity_annotation"/>
+          <owl:Class rdf:about="http://aims.fao.org/aos/common/EntityAnnotation"/>
           <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
         </owl:unionOf>
       </owl:Class>
@@ -1912,7 +1905,6 @@
   <owl:FunctionalProperty rdf:about="http://aims.fao.org/aos/common/takenFromSource">
     <rdfs:label xml:lang="en">Taken from source</rdfs:label>
     <rdfs:comment xml:lang="en">The source (website, dictionary, thesaurus, classification scheme, terminology system, etc.) where the definition has been taken from.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://aims.fao.org/aos/common/c_definition"/>
     <rdfs:range>
       <owl:DataRange>
         <owl:oneOf rdf:parseType="Resource">
@@ -1958,12 +1950,13 @@
         </owl:oneOf>
       </owl:DataRange>
     </rdfs:range>
+    <rdfs:domain rdf:resource="http://aims.fao.org/aos/common/Definition"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </owl:FunctionalProperty>
   <owl:FunctionalProperty rdf:about="http://aims.fao.org/aos/common/hasSourceLink">
     <rdfs:label xml:lang="en">Source for the URL link</rdfs:label>
-    <rdfs:domain rdf:resource="http://aims.fao.org/aos/common/c_definition"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://aims.fao.org/aos/common/Definition"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </owl:FunctionalProperty>
   <owl:FunctionalProperty rdf:about="http://aims.fao.org/aos/common/hasStatus">
