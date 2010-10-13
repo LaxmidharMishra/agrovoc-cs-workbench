@@ -11,7 +11,9 @@ import it.uniroma2.art.owlart.vocabulary.XmlSchema;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +28,7 @@ import edu.stanford.smi.protegex.owl.model.RDFProperty;
 import edu.stanford.smi.protegex.owl.model.RDFResource;
 import edu.stanford.smi.protegex.owl.model.RDFSLiteral;
 import edu.stanford.smi.protegex.owl.model.RDFSNames;
+import fao.org.owl2skos.RunConversion;
 
 public class OWL2SKOSConverter {
 
@@ -77,10 +80,12 @@ public class OWL2SKOSConverter {
 		// **************************************
 		// CONCEPTS CONVERSION
 		// *************************************
-
+		int count = 0;
+		Date d0 = new Date();
+		int totalConcepts = countTotalConcepts();
 		// recursive descent along the tree, converting all concepts
 		for (OWLNamedClass cls : rootConcepts) {
-			exploreConcept(cls);
+			count += exploreConcept(cls, 0, count, totalConcepts, d0);
 		}
 	}
 
@@ -97,7 +102,9 @@ public class OWL2SKOSConverter {
 	public void convertInstance(OWLIndividual ind, ARTURIResource skosConcept) throws ModelUpdateException,
 			ModelAccessException {
 
-		System.out.print("converting concept: " + ind);
+		Date d = new Date();
+		SimpleDateFormat df = new SimpleDateFormat("dd | hh:mm:ss");
+		//System.out.print(df.format(d) + " :: converting concept: " + ind);
 		
 		// **************************************
 		// CONCEPT PROPERTIES CONVERSION
@@ -106,7 +113,7 @@ public class OWL2SKOSConverter {
 		// convertDatatypePlainLiteralLanguageProperty(ind, skosConcept, rdfsLabel);
 		// convertDatatypePlainLiteralLanguageProperty(ind, skosConcept, rdfsComment);
 
-		System.out.print("|its properties...");
+		//System.out.print("|its properties...");
 		
 		for (OWLObjectProperty prop : ConversionPropertyLists.conceptToConcept) {
 			convertObjectProperty(ind, skosConcept, prop, ResType.instance);
@@ -128,7 +135,7 @@ public class OWL2SKOSConverter {
 		// ENTITY ANNOTATIONS CONVERSION
 		// *************************************
 
-		System.out.print("|its entity annotations...");
+		//System.out.print("|its entity annotations...");
 		
 		// HAS DEFINITION CONVERSION
 		Collection<OWLIndividual> hasDefinitions = ind.getPropertyValues(Vocabulary.hasDefinition);
@@ -149,27 +156,25 @@ public class OWL2SKOSConverter {
 			RDFSLiteral label = labels.iterator().next();
 			skosXLModel.addLabel(newDef, label.getString(), label.getLanguage());*/
 			
-			// one label per language per definition is allowed so should not restrict to only one label
-			for(RDFSLiteral label: labels)
-			{
+			for(RDFSLiteral label : labels){
 				skosXLModel.addLabel(newDef, label.getString(), label.getLanguage());
 			}
-			
-
 			// COMMENTS
-			// rdfs:comments is not used for definition but will be used for image conversion
-			/*Collection<RDFSLiteral> comments = definition.getComments();
+			/*
+			Collection<RDFSLiteral> comments = definition.getComments();
 			
+			// TODO modified to add multiple comments in different languages - pms
 			if (comments.size() != 1)
 				throw new IllegalStateException(
 						"there should be only one comment per c_definition!, while here we have: " + comments);
 
 			RDFSLiteral comment = comments.iterator().next();
 			skosXLModel.addComment(newDef, comment.getString(), comment.getLanguage());
+			for(RDFSLiteral comment : comments){
+				skosXLModel.addComment(newDef, comment.getString(), comment.getLanguage());
+			}
 			*/
 			
-			
-
 			// OTHER PROPERTIES OF DEFINITION
 			convertDatatypeStringTypedProperty(definition, newDef, Vocabulary.takenFromSource);
 			convertDatatypeStringTypedProperty(definition, newDef, Vocabulary.hasSourceLink);
@@ -184,7 +189,7 @@ public class OWL2SKOSConverter {
 		// LEXICALIZATIONS CONVERSION
 		// *************************************
 
-		System.out.print("|its lexicalizations...");
+		// System.out.print("|its lexicalizations...");
 		
 		Collection<OWLIndividual> lexicalizations = ind.getPropertyValues(Vocabulary.hasLexicalization);
 		for (OWLIndividual lexicalization : lexicalizations) {
@@ -247,7 +252,7 @@ public class OWL2SKOSConverter {
 
 		}
 		
-		System.out.println("|concept converted");
+		//System.out.println("|concept converted");
 
 	}
 
@@ -350,9 +355,37 @@ public class OWL2SKOSConverter {
 				.getURI()), resType);
 	}
 
+	public int countConcept(OWLNamedClass cls, int level, int count) throws ModelUpdateException, ModelAccessException {
+		Collection<OWLNamedClass> subConcepts = cls.getSubclasses(false);
+		count++;
+		String tabs = "";
+		for(int i=0; i<level; i++)
+			tabs +="|\t";
+		tabs+="|--";
+		level++;
+		
+		for (OWLNamedClass subCls : subConcepts) {
+			count = countConcept(subCls, level, count);
+		}
+		return count;
+	}
+	
+	public int countTotalConcepts() throws ModelUpdateException, ModelAccessException {
+		Collection<OWLNamedClass> rootConcepts = convertRootConcepts();
+		int count = 0;
+		// recursive descent along the tree, converting all concepts
+		for (OWLNamedClass cls : rootConcepts) {
+			count += countConcept(cls, 0, 0);
+		}
+		System.out.println("TOTAL CONCEPTS FOUND : " + count);
+		return count;
+	}
+	
 	@SuppressWarnings("unchecked")
-	public void exploreConcept(OWLNamedClass cls) throws ModelUpdateException, ModelAccessException {
+		public int exploreConcept(OWLNamedClass cls, int level, int count, int totalCount, Date d0) throws ModelUpdateException, ModelAccessException {
+		count++;
 		Collection<OWLIndividual> instances = cls.getInstances(false);
+		Date d1 = new Date();
 		if (instances.size() != 1)
 			throw new IllegalStateException(
 					"no domain class in the OWL AGROVOC Model should have other than one instance, while: "
@@ -360,13 +393,24 @@ public class OWL2SKOSConverter {
 		OWLIndividual inst = instances.iterator().next();
 		ARTURIResource skosConcept = skosXLModel.createURIResource(cls.getURI());
 		convertInstance(inst, skosConcept);
-
+		Date d2 = new Date();
 		Collection<OWLNamedClass> subConcepts = cls.getSubclasses(false);
+		
+		String timediff = RunConversion.getTimeDifference(d2, d1);
+		
+		String tabs = "";
+		for(int i=0; i<level; i++)
+			tabs +="|\t";
+		tabs+="|--";
+		level++;
+		String format = "%5d of %5d - in: %s - ET: %s :: %-80s\n";
+		System.out.format( format, count, totalCount, timediff, RunConversion.getTimeDifference(d2, d0) , tabs + "[" + cls.getURI() +"]");
 
 		for (OWLNamedClass subCls : subConcepts) {
 			skosXLModel.addConcept(subCls.getURI(), skosConcept);
-			exploreConcept(subCls);
+			count = exploreConcept(subCls, level, count, totalCount, d0);
 		}
+		return count;
 	}
 
 	public void saveConversion(File outputFile) throws IOException, ModelAccessException,
