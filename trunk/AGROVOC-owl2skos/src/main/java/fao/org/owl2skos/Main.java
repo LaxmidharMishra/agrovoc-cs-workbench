@@ -10,6 +10,8 @@ import it.uniroma2.art.owlart.models.SKOSXLModel;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import edu.stanford.smi.protege.model.Project;
 import fao.org.owl2skos.conversion.OWL2SKOSConverter;
@@ -46,18 +48,21 @@ public class Main {
 		if (args.length < 2) {
 			System.out
 					.println("usage:\n"
-							+ "java fao.org.owl2skos.Main <ProtegeDBConfigFile> <conversionOutputFile> [OWLART Implementing Class]");
+							+ "java fao.org.owl2skos.Main <ProtegeDBConfigFile> <conversionOutputFile> <persistence> <Data_directory> [OWLART Implementing Class]");
 			return;
 		}
-
+		
 		// PROTEGE PROJECT LOADING
 		ProtegeModelLoader loader = new ProtegeModelLoader();
 		Project protProject = loader.loadProtegeProject(args[0]);
+		
+		boolean persistance  = Boolean.parseBoolean(args[2]);
+		String dataDirectory = args[3];
 
 		// OWL ART SKOSXLMODEL LOADING
 		String owlArtModelFactoryImplClassName;
-		if (args.length > 2)
-			owlArtModelFactoryImplClassName = args[2];
+		if (args.length > 4)
+			owlArtModelFactoryImplClassName = args[4];
 		else
 			owlArtModelFactoryImplClassName = OWL2SKOSConverter.SesameModelFactoryImplClassName;
 
@@ -65,15 +70,23 @@ public class Main {
 				.forName(owlArtModelFactoryImplClassName);
 		OWLArtModelFactory fact = OWLArtModelFactory.createModelFactory(owlArtModelFactoryImplClass
 				.newInstance());
-		SKOSXLModel skosXLModel = fact.loadSKOSXLModel("http://aims.fao.org/aos/agrovoc", "ModelData", false);
+		SKOSXLModel skosXLModel = fact.loadSKOSXLModel("http://aims.fao.org/aos/agrovoc", dataDirectory, persistance);
 		skosXLModel.setDefaultNamespace(OWL2SKOSConverter.agrovocDefNamespace);
 
 		// CONVERSION
-
 		OWL2SKOSConverter converter = new OWL2SKOSConverter(protProject, skosXLModel);
-		File outputFile = new File(args[1]);
+		String ntFile = args[1];
+		String rdfFile = ntFile.replace(".nt", ".rdf");
+		File ntOutputFile = new File(ntFile);
+		File rdfOutputFile = new File(rdfFile);
+		Date d1 = new Date();
+		System.out.println("CONMVERSION STARTED AT : " + d1);
 		converter.convert();
-		converter.saveConversion(outputFile);
-
+		Date d2 = new Date();
+		System.out.println("CONVERSION ENDED AT : " + d2);
+		System.out.println("TOTAL TIME FOR CONVERSION: " + RunConversion.getTimeDifference(d2, d1));
+		converter.saveConversion(ntOutputFile);
+		converter.saveConversion(rdfOutputFile);
+		System.out.println("TOTAL TIME : " + RunConversion.getTimeDifference(new Date(), d1));
 	}
 }
