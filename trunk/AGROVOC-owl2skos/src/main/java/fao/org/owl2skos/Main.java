@@ -7,6 +7,8 @@ import it.uniroma2.art.owlart.exceptions.UnsupportedRDFFormatException;
 import it.uniroma2.art.owlart.models.ModelFactory;
 import it.uniroma2.art.owlart.models.OWLArtModelFactory;
 import it.uniroma2.art.owlart.models.SKOSXLModel;
+import it.uniroma2.art.owlart.models.conf.BadConfigurationException;
+import it.uniroma2.art.owlart.models.conf.ModelConfiguration;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,11 +42,12 @@ public class Main {
 	 * @throws ModelUpdateException
 	 * @throws ModelAccessException
 	 * @throws UnsupportedRDFFormatException
+	 * @throws BadConfigurationException 
 	 */
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws IOException, ClassNotFoundException,
 			InstantiationException, IllegalAccessException, ModelCreationException, ModelUpdateException,
-			ModelAccessException, UnsupportedRDFFormatException {
+			ModelAccessException, UnsupportedRDFFormatException, BadConfigurationException {
 		if (args.length < 2) {
 			System.out
 					.println("usage:\n"
@@ -70,7 +73,12 @@ public class Main {
 				.forName(owlArtModelFactoryImplClassName);
 		OWLArtModelFactory fact = OWLArtModelFactory.createModelFactory(owlArtModelFactoryImplClass
 				.newInstance());
-		SKOSXLModel skosXLModel = fact.loadSKOSXLModel("http://aims.fao.org/aos/agrovoc", dataDirectory, persistance);
+		
+		ModelConfiguration mcfg = fact.createModelConfigurationObject();
+		mcfg.setParameter("directTypeInference", "false");
+		mcfg.setParameter("rdfsInference", "false");
+		
+		SKOSXLModel skosXLModel = fact.loadSKOSXLModel("http://aims.fao.org/aos/agrovoc", dataDirectory, persistance, mcfg);
 		skosXLModel.setDefaultNamespace(OWL2SKOSConverter.agrovocDefNamespace);
 
 		// CONVERSION
