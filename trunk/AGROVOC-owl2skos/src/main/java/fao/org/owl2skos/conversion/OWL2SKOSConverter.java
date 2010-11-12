@@ -11,7 +11,6 @@ import it.uniroma2.art.owlart.vocabulary.XmlSchema;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 
@@ -80,12 +79,12 @@ public class OWL2SKOSConverter {
 		// **************************************
 		// CONCEPTS CONVERSION
 		// *************************************
-		int count = 0;
+		int count = rootConcepts.size();
 		Date d0 = new Date();
 		int totalConcepts = countTotalConcepts();
 		// recursive descent along the tree, converting all concepts
 		for (OWLNamedClass cls : rootConcepts) {
-			count += exploreConcept(cls, 0, count, totalConcepts, d0);
+			count = exploreConcept(cls, 0, count, totalConcepts, d0);
 		}
 	}
 
@@ -102,10 +101,6 @@ public class OWL2SKOSConverter {
 	public void convertInstance(OWLIndividual ind, ARTURIResource skosConcept) throws ModelUpdateException,
 			ModelAccessException {
 
-		Date d = new Date();
-		SimpleDateFormat df = new SimpleDateFormat("dd | hh:mm:ss");
-		//System.out.print(df.format(d) + " :: converting concept: " + ind);
-		
 		// **************************************
 		// CONCEPT PROPERTIES CONVERSION
 		// *************************************
@@ -259,10 +254,29 @@ public class OWL2SKOSConverter {
 	@SuppressWarnings("unchecked")
 	void convertDatatypePlainLiteralLanguageProperty(RDFResource owlSubject, ARTURIResource skosSubject,
 			RDFProperty predicate) throws ModelUpdateException {
-		Collection<RDFSLiteral> values = owlSubject.getPropertyValues(predicate);
-		for (RDFSLiteral value : values) {
-			skosXLModel.addTriple(skosSubject, skosXLModel.createURIResource(predicate.getURI()), skosXLModel
-					.createLiteral(value.getString(), value.getLanguage()));
+		Collection<?> values = owlSubject.getPropertyValues(predicate);
+		for (Object obj : values) {
+			if(obj instanceof RDFSLiteral)
+			{
+				RDFSLiteral value =  (RDFSLiteral) obj;	
+				skosXLModel.addTriple(skosSubject, skosXLModel.createURIResource(predicate.getURI()), skosXLModel
+						.createLiteral(value.getString(), value.getLanguage()));
+			}
+			else if(obj instanceof OWLIndividual)
+			{
+				OWLIndividual value =  (OWLIndividual) obj;
+				Collection<RDFSLiteral> labels = value.getLabels();
+				for(RDFSLiteral label : labels){
+					skosXLModel.addTriple(skosSubject, skosXLModel.createURIResource(predicate.getURI()), skosXLModel
+							.createLiteral(label.getString(), label.getLanguage()));
+				}
+				
+			}
+			else
+			{
+				System.out.println("predicate: "+predicate.getURI() +"   subject: "+owlSubject.getURI());
+				System.out.println("Not converted: "+ obj);
+			}
 		}
 	}
 
@@ -355,27 +369,22 @@ public class OWL2SKOSConverter {
 				.getURI()), resType);
 	}
 
-	public int countConcept(OWLNamedClass cls, int level, int count) throws ModelUpdateException, ModelAccessException {
+	public int countConcept(OWLNamedClass cls, int count) throws ModelUpdateException, ModelAccessException {
 		Collection<OWLNamedClass> subConcepts = cls.getSubclasses(false);
-		count++;
-		String tabs = "";
-		for(int i=0; i<level; i++)
-			tabs +="|\t";
-		tabs+="|--";
-		level++;
-		
 		for (OWLNamedClass subCls : subConcepts) {
-			count = countConcept(subCls, level, count);
+			count++;
+			count = countConcept(subCls, count);
 		}
 		return count;
 	}
 	
 	public int countTotalConcepts() throws ModelUpdateException, ModelAccessException {
 		Collection<OWLNamedClass> rootConcepts = convertRootConcepts();
-		int count = 0;
+		System.out.println("TOTAL TOP CONCEPTS FOUND : " + rootConcepts.size());
+		int count = rootConcepts.size();
 		// recursive descent along the tree, converting all concepts
 		for (OWLNamedClass cls : rootConcepts) {
-			count += countConcept(cls, 0, 0);
+			count = countConcept(cls, count);
 		}
 		System.out.println("TOTAL CONCEPTS FOUND : " + count);
 		return count;
@@ -383,7 +392,6 @@ public class OWL2SKOSConverter {
 	
 	@SuppressWarnings("unchecked")
 		public int exploreConcept(OWLNamedClass cls, int level, int count, int totalCount, Date d0) throws ModelUpdateException, ModelAccessException {
-		count++;
 		Collection<OWLIndividual> instances = cls.getInstances(false);
 		Date d1 = new Date();
 		if (instances.size() != 1)
@@ -408,6 +416,7 @@ public class OWL2SKOSConverter {
 
 		for (OWLNamedClass subCls : subConcepts) {
 			skosXLModel.addConcept(subCls.getURI(), skosConcept);
+			count++;
 			count = exploreConcept(subCls, level, count, totalCount, d0);
 		}
 		return count;
