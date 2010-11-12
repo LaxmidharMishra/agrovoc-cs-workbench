@@ -1,19 +1,11 @@
 package fao.org.owl2skos;
 
-import edu.stanford.smi.protege.model.Project;
-import fao.org.owl2skos.examples.LoadAOSCommonFile;
-import fao.org.owl2skos.protege.ProtegeModelLoader;
-import it.uniroma2.art.owlart.exceptions.ModelAccessException;
-import it.uniroma2.art.owlart.exceptions.ModelCreationException;
-import it.uniroma2.art.owlart.exceptions.ModelUpdateException;
-import it.uniroma2.art.owlart.exceptions.UnsupportedRDFFormatException;
-
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.Date;
 import java.util.Properties;
+
+import fao.org.owl2skos.examples.LoadAOSCommonFile;
 
 public class RunConversion {
 
@@ -78,13 +70,13 @@ public class RunConversion {
 			Main.main(args1);
 			Date d2 = new Date();
 			System.out.println("FIRST PHASE ENDED - TIME ELAPSED : " +  getTimeDifference(d2,d1));
-			LoadAOSCommonFile.main(args2);
-			Date d3 = new Date();
+			//LoadAOSCommonFile.main(args2);
+			//Date d3 = new Date();
 			
-			System.out.println("\n");
-			System.out.println("FIRST PHASE ENDED - TIME ELAPSED : " +  getTimeDifference(d2,d1));
-			System.out.println("SECOND PHASE ENDED - TIME ELAPSED : " +  getTimeDifference(d3,d2));
-			System.out.println("TOTAL TIME ELAPSED : " +  getTimeDifference(d3,d1));
+			//System.out.println("\n");
+			//System.out.println("FIRST PHASE ENDED - TIME ELAPSED : " +  getTimeDifference(d2,d1));
+			//System.out.println("SECOND PHASE ENDED - TIME ELAPSED : " +  getTimeDifference(d3,d2));
+			//System.out.println("TOTAL TIME ELAPSED : " +  getTimeDifference(d3,d1));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		
@@ -98,21 +90,36 @@ public class RunConversion {
 	 */
 	public static String getTimeDifference(Date end, Date start)
     {
-        long lstart = start.getTime();
-        long lend = end.getTime();
+        long lstart = start.getTime()/1000;
+        long lend = end.getTime()/1000;
 
-        int msecsIn = (int) (lend - lstart); 
-        int secsIn = msecsIn/1000;
-        int hours = secsIn / 3600,
-        remainder = secsIn % 3600,
-        minutes = remainder / 60,
-        seconds = remainder % 60;
-    
-        return ( (hours < 10 ? "0" : "") + hours
-        + ":" + (minutes < 10 ? "0" : "") + minutes
-        + ":" + (seconds< 10 ? "0" : "") + seconds );
+        long secsIn = (long) (lend - lstart); 
+        
+        long secondIn = 1;
+        long minuteIn = secondIn * 60;
+        long hourIn = minuteIn * 60;
+        long dayIn = hourIn * 24;
+        long yearIn = dayIn * 365;
+
+        long diff = secsIn;
+        long elapsedYears = diff / yearIn;
+        diff = diff % yearIn;
+        long elapsedDays = diff / dayIn;
+        diff = diff % dayIn;
+        long elapsedHours = diff / hourIn;
+        diff = diff % hourIn;
+        long elapsedMinutes = diff / minuteIn;
+        diff = diff % minuteIn;
+        long elapsedSeconds = diff / secondIn;
+        
+        return ( (elapsedDays < 10 ? "0" : "") + elapsedDays
+        		+ ":" + (elapsedHours < 10 ? "0" : "") + elapsedHours
+                + ":" + (elapsedMinutes < 10 ? "0" : "") + elapsedMinutes
+                + ":" + (elapsedSeconds< 10 ? "0" : "") + elapsedSeconds );    
 
     }
+
+	
 	/**
 	 * Manage directory
 	 * @param rootDir
