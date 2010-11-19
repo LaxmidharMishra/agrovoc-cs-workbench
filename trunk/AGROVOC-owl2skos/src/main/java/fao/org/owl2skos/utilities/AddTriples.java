@@ -62,7 +62,7 @@ public class AddTriples {
 		String line;
 		while ((line = br.readLine()) != null) {
 			String[] triple = line.split("\\|");
-			model.addTriple(model.createURIResource(triple[0]), model.createURIResource(triple[1]), model.createURIResource(triple[2]));			
+			model.addTriple(model.createURIResource(triple[0].trim()), model.createURIResource(triple[1].trim()), model.createURIResource(triple[2].trim()));			
 		}
 	}
 
