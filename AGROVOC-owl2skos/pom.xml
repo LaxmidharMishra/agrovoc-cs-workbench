@@ -108,6 +108,11 @@
 			<version>2.2.2</version>
 			<type>jar</type>
 			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>it.uniroma2.art.owlart.agraphimpl</groupId>
+			<artifactId>owlart-agraphimpl</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
 		</dependency>	
 	</dependencies>	
 </project>

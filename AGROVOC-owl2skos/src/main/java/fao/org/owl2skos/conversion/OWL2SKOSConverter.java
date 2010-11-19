@@ -1,5 +1,6 @@
 package fao.org.owl2skos.conversion;
 
+import it.uniroma2.art.owlart.agraphimpl.factory.ARTModelFactoryAllegroGraphImpl;
 import it.uniroma2.art.owlart.exceptions.ModelAccessException;
 import it.uniroma2.art.owlart.exceptions.ModelUpdateException;
 import it.uniroma2.art.owlart.exceptions.UnsupportedRDFFormatException;
@@ -262,6 +263,7 @@ public class OWL2SKOSConverter {
 				skosXLModel.addTriple(skosSubject, skosXLModel.createURIResource(predicate.getURI()), skosXLModel
 						.createLiteral(value.getString(), value.getLanguage()));
 			}
+			// made for cases where errounsly a datatype property points to a resource
 			else if(obj instanceof OWLIndividual)
 			{
 				OWLIndividual value =  (OWLIndividual) obj;
@@ -297,7 +299,7 @@ public class OWL2SKOSConverter {
 		Collection<String> values = owlSubject.getPropertyValues(predicate);
 		for (String value : values) {
 			skosXLModel.addTriple(skosSubject, skosXLModel.createURIResource(predicate.getURI()), skosXLModel
-					.createLiteral(value.toString(), XmlSchema.Res.DATE));
+					.createLiteral(value.toString(), XmlSchema.Res.DATETIME));
 		}
 	}
 
