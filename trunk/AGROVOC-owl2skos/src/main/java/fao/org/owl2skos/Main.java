@@ -7,12 +7,12 @@ import it.uniroma2.art.owlart.exceptions.UnsupportedRDFFormatException;
 import it.uniroma2.art.owlart.models.ModelFactory;
 import it.uniroma2.art.owlart.models.OWLArtModelFactory;
 import it.uniroma2.art.owlart.models.SKOSXLModel;
+import it.uniroma2.art.owlart.models.UnsupportedModelConfigurationException;
 import it.uniroma2.art.owlart.models.conf.BadConfigurationException;
 import it.uniroma2.art.owlart.models.conf.ModelConfiguration;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import edu.stanford.smi.protege.model.Project;
@@ -43,11 +43,12 @@ public class Main {
 	 * @throws ModelAccessException
 	 * @throws UnsupportedRDFFormatException
 	 * @throws BadConfigurationException 
+	 * @throws UnsupportedModelConfigurationException 
 	 */
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws IOException, ClassNotFoundException,
 			InstantiationException, IllegalAccessException, ModelCreationException, ModelUpdateException,
-			ModelAccessException, UnsupportedRDFFormatException, BadConfigurationException {
+			ModelAccessException, UnsupportedRDFFormatException, BadConfigurationException, UnsupportedModelConfigurationException {
 		if (args.length < 2) {
 			System.out
 					.println("usage:\n"
@@ -88,7 +89,7 @@ public class Main {
 		File ntOutputFile = new File(ntFile);
 		File rdfOutputFile = new File(rdfFile);
 		Date d1 = new Date();
-		System.out.println("CONMVERSION STARTED AT : " + d1);
+		System.out.println("CONVERSION STARTED AT : " + d1);
 		converter.convert();
 		Date d2 = new Date();
 		System.out.println("CONVERSION ENDED AT : " + d2);
