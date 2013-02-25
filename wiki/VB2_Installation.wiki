@@ -1,0 +1,18 @@
+#Everything related to the current version being used for testing VB2.0
+
+= Packages to be downloaded =
+
+The current download for the VOCBENCH war is:
+
+http://agrovoc-cs-workbench.googlecode.com/files/vocbench-2.0.zip
+
+Current tested ST version is 0.8.6. Note that this is being tagged as 0.8.6 on the ST project site: https://code.google.com/p/semanticturkey/.
+You can just download it and run: "mvn clean install" on the project (providing maven in installed in your machine).
+
+Then, ... 8TO BE COMPLETED
+
+P.S: even the current version on the trunk (0.8.7-SNAPSHOT) works as well since there is no difference from 0.8.6 except for the new project version.
+
+= Known Issues =
+
+
