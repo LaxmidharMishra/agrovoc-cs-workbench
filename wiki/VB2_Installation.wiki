@@ -1,4 +1,4 @@
-#Everything related to the current version being used for testing VB2.0
+# Everything related to the current version being used for testing VB2.0
 
 = Packages to be downloaded =
 
@@ -14,5 +14,3 @@ Then, ... 8TO BE COMPLETED
 P.S: even the current version on the trunk (0.8.7-SNAPSHOT) works as well since there is no difference from 0.8.6 except for the new project version.
 
 = Known Issues =
-
-
