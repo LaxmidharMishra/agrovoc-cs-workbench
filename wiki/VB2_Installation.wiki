@@ -8,9 +8,9 @@ For testers:
 
 On our VOCBENCH shared folder on Dropbox, there is a VB2.0 folder. Inside this folder, there are two more folders:
 
-*ST-Server-Releases*: this folder is for delivering any information related to a new version of the ST server. This is mainly intended for delivery from the ART group of Tor Vergata to Sachit.
+*ST*: this folder is for delivering any information related to a new version of the ST server. This is mainly intended for delivery from the ART group of Tor Vergata to Sachit.
 
-*Full VB 2.0 Installation*: this folder is for the final installers and users (not for developers). Tipically Sachit fills this folder for the FAO team, after packing a new version.
+*VB 2.0 Full*: this folder is for the final installers and users (not for developers). Tipically Sachit fills this folder for the FAO team, after packing a new version.
 
 = Known Issues =
 
