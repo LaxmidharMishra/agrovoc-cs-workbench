@@ -1,5 +1,22 @@
 #summary Everything related to the current version being used for testing VB2.0
 
+= Installation = 
+
+VB2.0 is still in internal testing, thus the elements are not shared on a public resource.
+
+For testers:
+
+On our VOCBENCH shared folder on Dropbox, there is a VB2.0 folder. Inside this folder, there are two more folders:
+
+ST-Server-Releases: this folder is for delivering any information related to a new version of the ST server. This is mainly intended for delivery from the ART group of Tor Vergata to Sachit.
+
+Full VB 2.0 Installation: this folder is for the final installers and users (not for developers). Tipically Sachit fills this folder for the FAO team, after packing a new version.
+
+= Known Issues =
+
+After starting, a null pointer exception on the console is normal, as VB always tries to get the current project from ST. It will be fixed as soon as a query method for knowing the status of projects on ST is implemented in ST. However, this is a no-blocking issue for making the VB work.
+
+<wiki:comment>
 = Packages to be downloaded =
 
 The current download for the VOCBENCH war is:
@@ -12,5 +29,4 @@ You can just download it and run: "mvn clean install" on the project (providing 
 Then, ... 8TO BE COMPLETED
 
 P.S: even the current version on the trunk (0.8.7-SNAPSHOT) works as well since there is no difference from 0.8.6 except for the new project version.
-
-= Known Issues =
+</wiki:comment>
