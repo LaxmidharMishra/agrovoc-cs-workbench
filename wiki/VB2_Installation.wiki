@@ -1,4 +1,4 @@
-# Everything related to the current version being used for testing VB2.0
+#summary Everything related to the current version being used for testing VB2.0
 
 = Packages to be downloaded =
 
