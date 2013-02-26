@@ -14,7 +14,7 @@ On our VOCBENCH shared folder on Dropbox, there is a VB2.0 folder. Inside this f
 
 = Current version = 
 
-The current version has been updated on 21/2/2012 (see readme.txt in the "VB2.0 Full" folder).
+The current version has been updated on 26/2/2012 (see readme.txt in the "VB2.0 Full" folder).
 
 = Known Issues =
 
