@@ -21,7 +21,7 @@ The current version has been updated on 26/2/2012 (see readme.txt in the "VB2.0 
 After starting, a null pointer exception on the console is normal, as VB always tries to get the current project from ST. It will be fixed as soon as a query method for knowing the status of projects on ST is implemented in ST. However, this is a no-blocking issue for making the VB work.
 
 = Installation Document =
-Created FAQ section in installation document (VocBench Installation Notes Version2.0.docx) for solving problems raised during installation.
+Created FAQ section in installation document (VocBench Installation Notes Version2.0.docx) with solution for solving problems raised during installation.
 
 <wiki:comment>
 = Packages to be downloaded =
