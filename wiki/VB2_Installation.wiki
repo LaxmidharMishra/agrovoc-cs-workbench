@@ -37,7 +37,8 @@ LICENCE_FILE: use the license file in the root of the zip file distributed by Fa
 == OWLIM Per-Project Repository Configuration ==
 
 *OWLIM FullReasoning&Indexing Configuration*
-RULESET
+||*PARAMETER*||*VALUE*||
+||RULESET||___||
 TOTAL_CACHE_MEMORY
 MAIN_INDEX_MEMORY
 USE_PREDICATE_INDICES
