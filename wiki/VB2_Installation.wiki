@@ -48,10 +48,8 @@ LICENCE_FILE: use the license file in the root of the zip file distributed by Fa
 
 == OWLIM Data Configuration ==
 
-
-
-REPOSITORY_ID
-BASE_URL
+||REPOSITORY_ID||___||
+||BASE_URL||___||
 
 
 <wiki:comment>
