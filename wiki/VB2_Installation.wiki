@@ -25,7 +25,24 @@ After starting, a null pointer exception on the console is normal, as VB always 
 
 In this section we provide different installation configurations for the VOCBENCH. Instead of updating them on the Installation Instructions on the Dropbox folder, we try to maintain that document as static as possible, with references to configurations listed below. Users, and especially testers, are welcome to refer to this page for aligning their configurations.
 
+We distinguish different configuration blocks, where each block is logically defined by the component influenced by its parameters, and sub-blocks for each component may be defined on the basis of the frequency of their updates.
+
+== OWLIM general ==
+
+LICENCE_FILE: use the license file in the root of the zip file distributed by Fabrizio. The current name is: fao1core.license
+
 == OWLIM FullReasoning&Indexing Configuration ==
+
+REPOSITORY_ID
+LICENCE_FILE
+RULESET
+BASE_URL
+TOTAL_CACHE_MEMORY
+MAIN_INDEX_MEMORY
+USE_PREDICATE_INDICES
+PREDICATE_INDEX_MEMORY
+FULL_TEXT_MEMORY
+FULL_TEXT_SEARCH_INDEXING_POLICY
 
 
 <wiki:comment>
