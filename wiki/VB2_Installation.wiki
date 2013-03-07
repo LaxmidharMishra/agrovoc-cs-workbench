@@ -37,6 +37,7 @@ This section identifies a full set of installation parameters, obtained by combi
 
 ||ST.VERSION|| 0.8.6 (in any case the ST package is provided inside the installation directory)||
 ||VB.VERSION||download from: https://agrovoc-cs-workbench.googlecode.com/files/vocbench-2.0.zip||
+||VB.DB.VERSION||download from: http://agrovoc-cs-workbench.googlecode.com/files/administrator131.zip||
 ||OWLIM General|| see below, only one config ||
 ||OWLIM Per-Project Repository Configuration||OWLIM FullReasoning&Indexing Configuration||
 
