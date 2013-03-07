@@ -74,7 +74,7 @@ Very general configuration info about OWLIM. These should change very seldom.
 ||OWLIM.REPOSITORY_ID||AGROVOC_SKOS_VB_2013-02-05||
 ||DATA.VERSION||download: https://agrovoc-cs-workbench.googlecode.com/files/AGROVOC_SKOS_VB_2013-02-05.zip||
 ||DATA.BASE_URL||aims.fao.org/aos/agrovoc/||
-
+||ST.PROJECTNAME||remoteCompleteAgrovoc||
 
 
 
