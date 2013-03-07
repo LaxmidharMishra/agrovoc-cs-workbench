@@ -31,6 +31,8 @@ Each *header level 2* will define a block type, and then for each of them, speci
 
 == Full VB2.0 Configuration ==
 
+*Current Configuration*
+
 This section identifies a full set of installation parameters, obtained by combining specific values provided here and sets of config parameters from the sections here below
 
 ||ST.Version|| 0.8.6 (in any case the ST package is provided inside the installation directory)||
