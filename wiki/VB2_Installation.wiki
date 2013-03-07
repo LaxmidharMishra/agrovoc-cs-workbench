@@ -44,7 +44,7 @@ This section identifies a full set of installation parameters, obtained by combi
 
 Very general configuration info about OWLIM. These should change very seldom.
 
-||OWLIM.VERSION||the version Fabrizio gave us, licensed for FAO||
+||OWLIM.VERSION||5.2, the zip Fabrizio gave us, licensed for FAO||
 ||OWLIM.LICENCE_FILE||_use the license file in the root of the zip file distributed by Fabrizio. The current name is: *fao1core.license*_||
 
 == OWLIM Per-Project Repository Configuration ==
