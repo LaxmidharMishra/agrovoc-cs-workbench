@@ -59,13 +59,13 @@ Very general configuration info about OWLIM. These should change very seldom.
 
 *OWLIM FullReasoning&Indexing Configuration*
 || *PARAMETER* || *VALUE* ||
-||OWLIM.RULESET||___||
-||OWLIM.TOTAL_CACHE_MEMORY||___||
-||OWLIM.MAIN_INDEX_MEMORY||___||
-||OWLIM.USE_PREDICATE_INDICES||___||
-||OWLIM.PREDICATE_INDEX_MEMORY||___||
-||OWLIM.FULL_TEXT_MEMORY||___||
-||OWLIM.FULL_TEXT_SEARCH_INDEXING_POLICY||___||
+||OWLIM.RULESET||OWL2-RL||
+||OWLIM.TOTAL_CACHE_MEMORY||120m||
+||OWLIM.MAIN_INDEX_MEMORY||80m||
+||OWLIM.USE_PREDICATE_INDICES||True||
+||OWLIM.PREDICATE_INDEX_MEMORY||20m||
+||OWLIM.FULL_TEXT_MEMORY||20m||
+||OWLIM.FULL_TEXT_SEARCH_INDEXING_POLICY||ON_COMMIT||
 
 == Data Configuration ==
 
@@ -73,7 +73,7 @@ Very general configuration info about OWLIM. These should change very seldom.
 
 ||OWLIM.REPOSITORY_ID||AGROVOC_SKOS_VB_2013-02-05||
 ||SKOSDATA.VERSION||download: https://agrovoc-cs-workbench.googlecode.com/files/AGROVOC_SKOS_VB_2013-02-05.zip||
-||BASE_URI||aims.fao.org/aos/agrovoc/||
+||BASE_URL||aims.fao.org/aos/agrovoc/||
 
 
 
