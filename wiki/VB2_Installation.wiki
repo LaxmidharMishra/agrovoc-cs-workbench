@@ -38,7 +38,7 @@ This section identifies a full set of installation parameters, obtained by combi
 ||Data Configuration|| AGROVOC_SKOS_VB_2013-02-05 ||
 ||VBST General|| 26/2/2012 ||
 ||OWLIM General|| see below, only one config ||
-||OWLIM Per-Project Repository Configuration||OWLIM FullReasoning&Indexing Configuration||
+||OWLIM Repository Configuration||OWLIM FullReasoning&Indexing Configuration||
 
 == VBST General ==
 
@@ -55,7 +55,7 @@ Very general configuration info about OWLIM. These should change very seldom.
 ||OWLIM.VERSION||5.2, the zip Fabrizio gave us, licensed for FAO||
 ||OWLIM.LICENSE_FILE||_use the license file in the root of the zip file distributed by Fabrizio. The current name is: *fao1core.license*_||
 
-== OWLIM Per-Project Repository Configuration ==
+== OWLIM Repository Configuration ==
 
 *OWLIM FullReasoning&Indexing Configuration*
 || *PARAMETER* || *VALUE* ||
