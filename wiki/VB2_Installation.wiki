@@ -35,11 +35,12 @@ Each *header level 2* will define a block type, and then for each of them, speci
 
 This section identifies a full set of installation parameters, obtained by combining specific values provided here and sets of config parameters from the sections here below
 
-||VB General|| see below, only one config ||
+||Data Configuration|| AGROVOC_SKOS_VB_2013-02-05 ||
+||VBST General|| 26/2/2012 ||
 ||OWLIM General|| see below, only one config ||
 ||OWLIM Per-Project Repository Configuration||OWLIM FullReasoning&Indexing Configuration||
 
-== VB General ==
+== VBST General ==
 
 *26/2/2012*
 ||ST.VERSION|| 0.8.6 (in any case the ST package is provided inside the installation directory)||
