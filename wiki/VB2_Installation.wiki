@@ -8,7 +8,7 @@ For testers:
 
 On our VOCBENCH shared folder on Dropbox, there is a VB2.0 folder which is dedicated to VB2.0 specific installation packages and instructions. We list here below some of them, however, the main folder to be consulted for updated packaging material will be *VB 2.0 Full* (first in the list here).
 
-*VB 2.0 Full*: this folder is for the BETA testers (not for developers). Typically Sachit fills this folder for the FAO team, after packing a new version. This folder _must_ include also proper reference (or a working copy) of the ST server used for this installation. This it has to be _self-consistent_.
+*VB 2.0 Full*: this folder is for the BETA testers (not for developers). Typically Sachit fills this folder for the FAO team, after packing a new version. This folder _must_ include also proper reference (or a working copy) of the ST server used for this installation. Everything inside this folder has to be _self-consistent_.
 
 *ST*: this folder is for delivering any information related to a new version of the ST server. This is mainly intended for delivery of code/components from the ART group of Tor Vergata to Sachit, for ALPHA testing.
 
