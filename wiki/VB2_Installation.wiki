@@ -15,7 +15,7 @@ On our VOCBENCH shared folder on Dropbox, there is a VB2.0 folder which is dedic
 
 = Current version = 
 
-The current version has been updated on 26/2/2012 (see readme.txt in the "VB2.0 Full" folder).
+The current version has been updated on 08/03/2013 (see readme.txt in the "VB2.0 Full" folder).
 
 = Known Issues =
 
@@ -46,7 +46,7 @@ This section identifies a full set of installation parameters, obtained by combi
 ||ST.VERSION|| 0.8.6 (in any case the ST package is provided inside the installation directory)||
 ||ST.VB-BUNDLE.VERSION||0.0.1 available in _INST_PKG_||
 ||VB.VERSION||download from: https://agrovoc-cs-workbench.googlecode.com/files/vocbench-2.0.zip||
-||VB.DB.VERSION||download from: http://agrovoc-cs-workbench.googlecode.com/files/administrator131.zip||
+||VB.DB.VERSION||download from: http://agrovoc-cs-workbench.googlecode.com/files/administrator20.zip||
 
 == OWLIM General ==
 
