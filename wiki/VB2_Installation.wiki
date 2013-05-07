@@ -45,7 +45,7 @@ This section identifies a full set of installation parameters, obtained by combi
 *26/2/2012*
 ||ST.VERSION|| 0.8.6 (in any case the ST package is provided inside the installation directory)||
 ||ST.VB-BUNDLE.VERSION||0.0.1 available in _INST_PKG_||
-||VB.VERSION||download from: https://agrovoc-cs-workbench.googlecode.com/files/vocbench-2.0.zip||
+||VB.VERSION||download from: https://agrovoc-cs-workbench.googlecode.com/files/vocbench.zip||
 ||VB.DB.VERSION||download from: http://agrovoc-cs-workbench.googlecode.com/files/administrator20.zip||
 ||_update notes_||the install doc has been updated to version 0.7 on 25/03/2013||
 
