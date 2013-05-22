@@ -58,6 +58,16 @@ Very general configuration info about OWLIM. These should change very seldom.
 
 == OWLIM Repository Configuration ==
 
+*OWLIM_Fixed_OWLRL_Reasoning&Indexing*
+|| *PARAMETER* || *VALUE* ||
+||OWLIM.RULESET||"{pathtofile}/builtin_owl2-rl-fixed.pie"||
+||OWLIM.TOTAL_CACHE_MEMORY||120m||
+||OWLIM.MAIN_INDEX_MEMORY||80m||
+||OWLIM.USE_PREDICATE_INDICES||True||
+||OWLIM.PREDICATE_INDEX_MEMORY||20m||
+||OWLIM.FULL_TEXT_MEMORY||20m||
+||OWLIM.FULL_TEXT_SEARCH_INDEXING_POLICY||ON_COMMIT||
+
 *OWLIM FullReasoning&Indexing Configuration*
 || *PARAMETER* || *VALUE* ||
 ||OWLIM.RULESET||OWL2-RL||
