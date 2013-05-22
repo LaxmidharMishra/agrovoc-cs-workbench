@@ -60,7 +60,7 @@ Very general configuration info about OWLIM. These should change very seldom.
 
 *OWLIM_Fixed_OWLRL_Reasoning&Indexing*
 || *PARAMETER* || *VALUE* ||
-||OWLIM.RULESET||"{pathtofile}/builtin_owl2-rl-fixed.pie"||
+||OWLIM.RULESET||"{pathtofile}/builtin_owl2-rl-fixed.pie" (see instruction manual for custom rule files)||
 ||OWLIM.TOTAL_CACHE_MEMORY||120m||
 ||OWLIM.MAIN_INDEX_MEMORY||80m||
 ||OWLIM.USE_PREDICATE_INDICES||True||
